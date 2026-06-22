@@ -198,29 +198,23 @@ code {
   letter-spacing: 0.18em;
 }
 .cn-nav__brand:hover { color: var(--cn-ink); }
-.cn-nav__brand .seal {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 1.8em;
-  height: 1.8em;
-  background: var(--cn-vermilion);
-  color: var(--cn-paper);
-  font-size: 0.9em;
-  font-family: var(--cn-font-kai);
-  font-weight: 600;
-  border-radius: 3px;
-  border: 1px solid var(--cn-vermilion);
-  position: relative;
-  overflow: hidden;
+.cn-nav__brand .logo-mark {
+  width: 28px;
+  height: 28px;
+  color: var(--cn-vermilion);
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.3s ease;
 }
-/* 印章的轻微磨损感 */
-.cn-nav__brand .seal::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 30%, transparent 0%, transparent 50%, rgba(255,255,255,0.12) 100%);
-  pointer-events: none;
+.cn-nav__brand:hover .logo-mark {
+  color: var(--cn-gold);
+  transform: rotate(-8deg);
+}
+.cn-nav__brand .logo-text {
+  font-family: var(--cn-font-kai);
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-indent: 0.2em;
 }
 
 .cn-nav__links {
@@ -582,6 +576,17 @@ code {
   inset: 0;
   background: radial-gradient(circle at 30% 30%, transparent 0%, transparent 55%, rgba(0,0,0,0.18) 100%);
   pointer-events: none;
+}
+
+/* 新:页脚放大镜 logo */
+.cn-footer__logo {
+  width: 56px;
+  height: 56px;
+  color: var(--cn-vermilion);
+  margin-bottom: 1.2rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .cn-footer__title {
   font-size: 1.2rem;
