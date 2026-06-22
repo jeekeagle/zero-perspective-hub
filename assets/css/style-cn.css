@@ -1,34 +1,30 @@
 /* ============================================================
    Zero-Perspective-Hub · 新中式美学 (Style 2)
    ------------------------------------------------------------
-   复刻原站点的"双风格"模式 —— 这是第二种风格版本
-
-   设计语言:
-   - 宣纸 (暖白) / 墨 (深褐) / 朱砂 (正红) / 鎏金 (金)
-   - 霞鹜文楷 (LXGW WenKai) 作主字体 —— 参考 Zero-Skills-Hub
-   - 宋体主导,楷体作引言,篆体作印章
-   - 山水轮廓 / 卷云纹 / 印章 / 竹叶 作装饰
-   - 留白充足,行距宽松,字距稍宽
+   字体栈对齐 hermes-doc.aigc.green(同款 Docusaurus 文档风格)
 
    字体:
    - Inter (Latin) — Google Fonts
    - 霞鹜文楷 LXGW WenKai (中文主字体) — jsdelivr CDN
-   - Noto Serif SC / Source Han Serif SC (中文后备) — Google Fonts
-   - JetBrains Mono (代码) — Google Fonts
+   - 霞鹜文楷等宽 LXGW WenKai Mono (代码) — jsdelivr CDN
+   - JetBrains Mono (英文代码后备) — Google Fonts
    ============================================================ */
 
-/* 加载参考站使用的字体栈 */
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+/* 加载参考站使用的字体栈(同 hermes-doc) */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
 @import url("https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.7.0/style.css");
 
-/* 字体变量 —— 与参考站保持一致 */
+/* 字体变量 —— 与 hermes-doc(aigc.green)中文栈保持一致 */
 :root {
-  --cn-font-base: "Inter", "LXGW WenKai Screen", "LXGW WenKai", "霞鹜文楷",
-                   "Noto Serif SC", "Source Han Serif SC", "Songti SC",
+  /* 正文/标题:Inter(西文) → LXGW WenKai(中文) → 楷体后备 */
+  --cn-font-base: "Inter", "LXGW WenKai", "霞鹜文楷", "STKaiti", "KaiTi", "Kaiti SC", "楷体",
                    -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  /* 引言/导航:楷体风格,优先 LXGW WenKai(其本身是楷体) */
   --cn-font-kai:  "LXGW WenKai", "霞鹜文楷", "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
-  --cn-font-song: "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, "宋体", serif;
-  --cn-font-mono: "JetBrains Mono", "SF Mono", Consolas, "Courier New", monospace;
+  /* 宋体后备(用于 h2 等正式标题) */
+  --cn-font-song: "LXGW WenKai", "Noto Serif SC", "Source Han Serif SC", "Songti SC", STSong, "宋体", serif;
+  /* 代码:LXGW WenKai Mono(中文代码) → JetBrains Mono(英文) */
+  --cn-font-mono: "JetBrains Mono", "LXGW WenKai Mono", "LXGW WenKai", "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
 }
 
 /* ---------- 基础重置 ---------- */
