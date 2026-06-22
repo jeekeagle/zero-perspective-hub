@@ -5,7 +5,7 @@
 不是一本书,不是 newsletter,也不是教程。
 是一间镜片铺子:陈列各种视角,介绍它们的诞生,也诚实记录它们在何处失效。
 
-🔗 在线访问:https://<your-username>.github.io/zero-perspective-hub/
+🔗 在线访问:https://<jeekeagle>.github.io/zero-perspective-hub/
 
 ## 收什么
 
@@ -70,14 +70,14 @@ git init
 git add .
 git commit -m "init: 视角研究中心初始版本"
 git branch -M main
-git remote add origin https://github.com/<your-username>/zero-perspective-hub.git
+git remote add origin https://github.com/<jeekeagle>/zero-perspective-hub.git
 git push -u origin main
 ```
 
 3. GitHub 仓库 → **Settings** → **Pages**
 4. Source 选 **Deploy from a branch**
 5. Branch 选 `main`,目录 `/ (root)`,保存
-6. 等待 1-2 分钟,访问 `https://<your-username>.github.io/zero-perspective-hub/`
+6. 等待 1-2 分钟,访问 `https://<jeekeagle>.github.io/zero-perspective-hub/`
 
 ### 新增一个视角
 

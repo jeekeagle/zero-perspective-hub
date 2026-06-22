@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Zero-Perspective-Hub · 视角研究中心</title>
-    <link>https://your-username.github.io/zero-perspective-hub/</link>
+    <link>https://jeekeagle.github.io/zero-perspective-hub/</link>
     <description>一个关于视角的小型研究中心 —— 收集镜片、整理方法、检验用法。</description>
     <language>zh-Hans</language>
-    <atom:link href="https://your-username.github.io/zero-perspective-hub/feed.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://jeekeagle.github.io/zero-perspective-hub/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
       <title>当模型开始"思考"</title>
-      <link>https://your-username.github.io/zero-perspective-hub/pages/when-models-think.html</link>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/when-models-think.html</link>
       <description>从一次性回答到多步推理,LLM 正在悄悄变成另一种东西 —— 不是更聪明的搜索框,而是会分镜头的同事。</description>
       <pubDate>Sun, 15 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://your-username.github.io/zero-perspective-hub/pages/when-models-think.html</guid>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/when-models-think.html</guid>
     </item>
 
     <item>
       <title>Skill 的经济学</title>
-      <link>https://your-username.github.io/zero-perspective-hub/pages/skill-economy.html</link>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/skill-economy.html</link>
       <description>当提示词开始可被交易、可被复用、可被打包 —— 一种新的微技能市场正在 prompt 层生长。</description>
       <pubDate>Thu, 28 May 2026 00:00:00 +0800</pubDate>
-      <guid>https://your-username.github.io/zero-perspective-hub/pages/skill-economy.html</guid>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/skill-economy.html</guid>
     </item>
 
     <item>
       <title>提示词是新的编程语言</title>
-      <link>https://your-username.github.io/zero-perspective-hub/pages/prompt-as-program.html</link>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/prompt-as-program.html</link>
       <description>自然语言正在获得类型系统、模块化与版本管理 —— 但和传统编程不同,它的编译是发生在模型权重里的。</description>
       <pubDate>Sun, 10 May 2026 00:00:00 +0800</pubDate>
-      <guid>https://your-username.github.io/zero-perspective-hub/pages/prompt-as-program.html</guid>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/prompt-as-program.html</guid>
     </item>
 
     <item>
       <title>Agent 协作的拓扑学</title>
-      <link>https://your-username.github.io/zero-perspective-hub/pages/agent-topology.html</link>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/agent-topology.html</link>
       <description>单体 Agent 不够用之后,我们开始画图 —— 串行、并行、投票、监督。每种拓扑都对应一种组织哲学。</description>
       <pubDate>Wed, 22 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>https://your-username.github.io/zero-perspective-hub/pages/agent-topology.html</guid>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/agent-topology.html</guid>
     </item>
 
     <item>
       <title>从工具到同事</title>
-      <link>https://your-username.github.io/zero-perspective-hub/pages/from-tool-to-colleague.html</link>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/from-tool-to-colleague.html</link>
       <description>关系变了。你不再告诉电脑"做什么",而是在和它讨论"该不该做"。这个转变,比模型本身重要得多。</description>
       <pubDate>Thu, 03 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>https://your-username.github.io/zero-perspective-hub/pages/from-tool-to-colleague.html</guid>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/from-tool-to-colleague.html</guid>
     </item>
 
     <item>
       <title>RAG 不是银弹,但它改变了什么</title>
-      <link>https://your-username.github.io/zero-perspective-hub/pages/notes-on-rag.html</link>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/notes-on-rag.html</link>
       <description>检索增强被吹成万能解药,被骂成临时补丁。两种说法都有道理 —— 关键看你怎么用上下文窗口。</description>
       <pubDate>Wed, 18 Mar 2026 00:00:00 +0800</pubDate>
-      <guid>https://your-username.github.io/zero-perspective-hub/pages/notes-on-rag.html</guid>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/notes-on-rag.html</guid>
     </item>
   </channel>
 </rss>
