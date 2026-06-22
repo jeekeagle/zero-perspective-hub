@@ -21,3 +21,16 @@ node_modules/
 dist/
 build/
 .cache/
+
+# 监控脚本临时文件
+.incoming-skills/
+.watch-state.json
+.watch-log.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# 测试脚本(本地)
+check_chapter.py
