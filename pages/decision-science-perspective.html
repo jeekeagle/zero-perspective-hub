@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>决策科学视角分析视角 · Zero-Perspective-Hub</title>
+  <meta name="description" content="用决策科学视角分析问题,核心是管理不确定性而非寻找正确答案。关注期望值、凯利公式、贝叶斯更新等工具,识别认知偏差,理解决策过程与结果的区别。" />
+  <meta name="keywords" content="视角,管理,决策科学视角分析视角,LXGW WenKai,新中式" />
+  <meta name="author" content="jeekeagle" />
+  <meta name="theme-color" content="#a8321d" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style-cn.css" />
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="canonical" href="https://jeekeagle.github.io/zero-perspective-hub/pages/decision-science-perspective.html" />
+</head>
+<body>
+  <div class="cn-drawer-overlay"></div>
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <button class="cn-nav__drawer-toggle" type="button" aria-label="打开目录">☰</button>
+      <a class="cn-nav__brand" href="../index.html">
+        <img class="logo-mark" src="../img/logo.svg" alt="视角" /><span class="logo-text">视角</span>
+      </a>
+      <ul class="cn-nav__links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../intro.html">序言</a></li>
+        <li><a href="../index.html#perspectives">视角</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+      </ul>
+      <div class="cn-nav__actions">
+        <span class="cn-nav__search"><button class="cn-search-trigger" type="button" aria-label="搜索" title="搜索 (Ctrl+K)">搜</button></span>
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="../intro.html">序言</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="when-models-think.html">二 · 分类学视角</a></li>
+          <li><a href="skill-economy.html">三 · 经济学视角</a></li>
+          <li><a href="prompt-as-program.html">四 · 程序视角</a></li>
+          <li><a href="agent-topology.html">五 · 拓扑学视角</a></li>
+          <li><a href="from-tool-to-colleague.html">六 · 关系视角</a></li>
+          <li><a href="notes-on-rag.html">七 · 架构视角</a></li>
+          <li><a href="decision-science-perspective.html" class="active">七 · 决策科学视角分析视角</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="../archive.html">索引</a></li>
+          <li><a href="../about.html">关于</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="../index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <a href="../intro.html">序章</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">七 · 决策科学视角分析视角</span>
+      </nav>
+
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">七</span>
+            <span class="cn-chapter-meta__vol">第一编 · 视角 · 第七章</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <time>2026.06</time>
+            <span class="cn-breadcrumb__sep">·</span>
+            <span>约 7 分钟读完</span>
+          </div>
+          <h1 class="cn-chapter__title">决策科学视角分析视角</h1>
+          <p class="cn-chapter__subtitle">用决策科学视角分析问题,核心是管理不确定性而非寻找正确答案。关注期望值、凯利公式、贝叶斯更新等工具,识别认知偏差,理解决策过程与结果的区别。</p>
+          <div class="cn-chapter__meta">
+            <span class="tag">管理</span>
+            <span class="tag">管理</span>
+          </div>
+        </header>
+
+        <div class="cn-chapter__body">
+          <ul>
+          <li>视角名称: 决策科学视角</li>
+          <li>核心问题: 如何在不确定性中做出高质量决策?</li>
+          <li>适用场景: 涉及不确定性、需要权衡风险收益、可重复决策的场景</li>
+          <li>理论基础: 概率论、贝叶斯统计、行为经济学</li>
+          <li>视角分类: 按透镜来源为方法视角,按透镜性质为认知性视角,按透镜功能为决策型视角</li>
+          <li>适用对象: 按存在形态为现象型/系统型,按时间维度为动态,按复杂程度为复杂/混沌,按分析目的为决策型,按分析深度为深层,按对象组合为单一/系统</li>
+          <li>Root Rank形态: 反馈循环</li>
+          </ul>
+          <h2>核心定义层</h2>
+          <h3>什么是决策科学视角</h3>
+          <p>决策科学视角不是寻找正确答案的确定性思维,不是拍脑袋的直觉决策,而是基于概率思维和科学方法管理不确定性的系统性框架。</p>
+          <h3>核心概念</h3>
+          <p><strong>概率思维</strong>: 选择背后对应的是结果的可能性,而不是确定性的结果。决策是在不确定性中做选择,必须用概率分布来描述可能的结果。</p>
+          <p><strong>期望值</strong>: 期望值是"各结果的概率乘以各结果的价值"的总和,它帮助我们筛选掉那些看似诱人但实际期望为负的选项,专注于真正有价值的机会。</p>
+          <p><strong>凯利公式</strong>: 最佳下注比例 = (赔率×胜率 - 失败率) ÷ 赔率。这个公式解决了"找到好机会后应该投入多少"的问题,既避免了过度投入导致的灾难性损失,也防止了投入不足错失机会。</p>
+          <p><strong>贝叶斯更新</strong>: 概率不是客观事实,而是主观信念。先根据已有信息建立先验概率,然后随着新证据的出现,不断更新这个概率,得到后验概率。每一次决策都能让你更了解世界,做出更接近现实的判断。</p>
+          <p><strong>认知偏差</strong>: 人类大脑不是为科学决策设计的,而是为了"足够好"的决策设计的。锚定效应、可得性偏差、证实性偏差等认知偏差会导致系统性的决策错误。</p>
+          <h3>Root Rank形态</h3>
+          <p>决策科学视角的root rank形态为反馈循环,其关系本质是决策、结果、学习之间的正负反馈推动,适合用环路图(标 +/-)来可视化。</p>
+          <h3>核心创新</h3>
+          <p>决策科学视角采用"要点索引+问题匹配"机制,只输出问题最相关的1-2个核心要点,深度展开分析,避免泛泛而谈。</p>
+          <h2>要点索引层</h2>
+          <h3>要点1: 期望值筛选</h3>
+          <p><strong>核心判据</strong>:</p>
+          <ul>
+          <li>这个决策的期望值是正还是负?</li>
+          <li>是否有期望值更高的替代选项?</li>
+          <li>是否陷入了局部最优而忽略了全局最优?</li>
+          </ul>
+          <p><strong>适用场景</strong>: 需要在多个选项中做选择、需要评估机会价值的场景</p>
+          <p><strong>典型案例</strong>: 投资决策中计算不同资产的期望收益,职业选择中评估不同路径的长期价值</p>
+          <h3>要点2: 凯利公式控制</h3>
+          <p><strong>核心判据</strong>:</p>
+          <ul>
+          <li>这个决策的胜率和赔率分别是多少?</li>
+          <li>应该投入多少资源(时间、金钱、精力)?</li>
+          <li>是否存在过度集中风险或投入不足的问题?</li>
+          </ul>
+          <p><strong>适用场景</strong>: 需要确定资源投入比例、需要控制风险的场景</p>
+          <p><strong>典型案例</strong>: 投资组合的资产配置,创业项目的资金分配,时间管理的精力分配</p>
+          <h3>要点3: 贝叶斯更新</h3>
+          <p><strong>核心判据</strong>:</p>
+          <ul>
+          <li>当前判断基于的先验概率是什么?</li>
+          <li>有什么新证据可以更新这个概率?</li>
+          <li>是否固守成见而忽略了新信息?</li>
+          </ul>
+          <p><strong>适用场景</strong>: 需要持续学习、需要根据新信息调整判断的场景</p>
+          <p><strong>典型案例</strong>: 投资中根据市场数据调整策略,产品开发中根据用户反馈迭代,职业发展中根据行业趋势调整方向</p>
+          <h3>要点4: 认知偏差识别</h3>
+          <p><strong>核心判据</strong>:</p>
+          <ul>
+          <li>当前决策是否受到锚定效应影响?</li>
+          <li>是否存在可得性偏差或证实性偏差?</li>
+          <li>是否有系统性的决策盲区?</li>
+          </ul>
+          <p><strong>适用场景</strong>: 需要提高决策质量、需要避免常见错误的场景</p>
+          <p><strong>典型案例</strong>: 谈判中避免被对方设置的锚点影响判断,投资中避免只关注支持自己观点的信息,招聘中避免第一印象导致的偏见</p>
+          <h3>要点5: 过程控制</h3>
+          <p><strong>核心判据</strong>:</p>
+          <ul>
+          <li>关注的是决策过程还是决策结果?</li>
+          <li>是否因为一次糟糕的结果而否定好的决策过程?</li>
+          <li>是否因为一次好的结果而肯定糟糕的决策过程?</li>
+          </ul>
+          <p><strong>适用场景</strong>: 需要长期决策、需要管理不确定性的场景</p>
+          <p><strong>典型案例</strong>: 创业中坚持正确的战略即使短期业绩不佳,投资中坚持纪律即使短期亏损,职业发展中坚持正确的方向即使短期挫折</p>
+          <h2>匹配逻辑层</h2>
+          <h3>问题特征分析维度</h3>
+          <p><strong>问题类型</strong>: 决策型/解释型/预测型/转换型</p>
+          <p><strong>关键要素</strong>: 不确定性/新信息/多选项/历史数据/持续调整</p>
+          <p><strong>问题尺度</strong>: 个人层面/组织层面/系统层面</p>
+          <h3>匹配度计算公式</h3>
+          <p>匹配度 = (类型匹配度 × 0.4) + (要素匹配度 × 0.4) + (尺度匹配度 × 0.2)</p>
+          <h3>输出规则</h3>
+          <ul>
+          <li>只输出匹配度最高的1-2个要点</li>
+          <li>如果最高匹配度<0.5,说明决策科学视角不适用</li>
+          </ul>
+          <h2>判据层</h2>
+          <p>在开始分析前,先过一遍这四条判据,确保你的分析是决策科学视角的:</p>
+          <p><strong>判据1</strong>: 是否用概率思维描述不确定性,而不是寻找确定答案?</p>
+          <p><strong>判据2</strong>: 是否关注长期期望值,而不是短期结果?</p>
+          <p><strong>判据3</strong>: 是否识别和避免认知偏差,而不是假设完全理性?</p>
+          <p><strong>判据4</strong>: 是否强调过程控制,而不是结果保证?</p>
+          <h2>结构判断层</h2>
+          <h3>双闸判断</h3>
+          <p><strong>闸1:不确定性程度</strong></p>
+          <ul>
+          <li>决策是否涉及显著的不确定性?</li>
+          <li>结果是否难以预测?</li>
+          <li>信息是否不完整?</li>
+          </ul>
+          <p><strong>闸2:可重复性</strong></p>
+          <ul>
+          <li>决策是否可重复或类似决策是否频繁发生?</li>
+          <li>是否有历史数据或经验可以借鉴?</li>
+          <li>是否可以建立决策模型?</li>
+          </ul>
+          <p><strong>判断逻辑</strong>:</p>
+          <ul>
+          <li>不确定性高 + 可重复性高 = 决策科学视角高度适用</li>
+          <li>不确定性高 + 可重复性低 = 决策科学视角中度适用</li>
+          <li>不确定性低 + 可重复性高 = 决策科学视角低度适用</li>
+          <li>不确定性低 + 可重复性低 = 决策科学视角不适用</li>
+          </ul>
+          <h2>反坍缩闸</h2>
+          <h3>避免常见陷阱</h3>
+          <p><strong>陷阱1:过度精确化</strong></p>
+          <ul>
+          <li>症状: 对无法量化的因素强行量化,对无法计算的参数强行计算</li>
+          <li>对策: 承认不确定性,用区间估计代替点估计,用定性分析补充定量分析</li>
+          </ul>
+          <p><strong>陷阱2:忽视偏差</strong></p>
+          <ul>
+          <li>症状: 假设决策者完全理性,忽略认知偏差对决策的影响</li>
+          <li>对策: 主动识别常见偏差,建立检查清单,引入第三方视角</li>
+          </ul>
+          <p><strong>陷阱3:静态思维</strong></p>
+          <ul>
+          <li>症状: 把决策当成一次性事件,不考虑动态调整</li>
+          <li>对策: 采用贝叶斯思维,根据新证据持续更新判断,建立反馈机制</li>
+          </ul>
+          <p><strong>陷阱4:结果导向</strong></p>
+          <ul>
+          <li>症状: 用结果评价决策质量,好的结果=好的决策,坏的结果=坏的决策</li>
+          <li>对策: 关注决策过程,用过程质量评价决策,理解结果与质量的区别</li>
+          </ul>
+          <p><strong>陷阱5:模型迷信</strong></p>
+          <ul>
+          <li>症状: 过度依赖数学模型,忽视模型假设和局限</li>
+          <li>对策: 理解模型适用边界,用常识判断补充模型结果,保持批判性思维</li>
+          </ul>
+          <p><strong>陷阱6:匹配失败强行输出</strong></p>
+          <ul>
+          <li>症状: 所有要点的匹配度都<0.5,但仍强行输出分析</li>
+          <li>对策: 明确返回"决策科学视角不适用",并说明原因</li>
+          </ul>
+          <h2>写作规范层</h2>
+          <h3>输出结构</h3>
+          <ol>
+          <li>问题特征分析与要点匹配</li>
+          <li>选中要点的深度分析</li>
+          <li>匹配度说明</li>
+          <li>决策建议</li>
+          </ol>
+          <h3>写作风格</h3>
+          <ul>
+          <li>零AI腔: 禁止"根据数据显示、系统分析表明、深入探讨、至关重要、此外、进一步、值得注意的是"</li>
+          <li>零咨询师腔: 禁止"这恰恰说明、这正是、这其实反映了"</li>
+          <li>零套话: 禁止"希望对你有帮助、加油、继续努力、坚持就是胜利"</li>
+          <li>零泛夸: 禁止"很棒、很好、很有想法、很有深度、不错"</li>
+          <li>口语化: 用"你"不用"您",说人话,像跟聪明朋友聊天</li>
+          <li>短句优先: 能用两个字说的不用四个字</li>
+          <li>一句一事: 每句只推进一步,长句拆短</li>
+          <li>具体: 名词看得见,动词有力气</li>
+          </ul>
+          <h3>格式要求</h3>
+          <ul>
+          <li>加粗标题用 <strong>XX</strong> 格式,每个标题后必须空一行</li>
+          <li>不用 markdown 引用块</li>
+          <li>不用「」括号</li>
+          </ul>
+          <h2>ASCII结构图</h2>
+          <p><strong>Root Rank形态</strong>: 反馈循环 <strong>取景框</strong>: 环路图(标 +/-)</p>
+          <pre><code>       +-----------------+
+       |     决策       |
+       +--------+--------+
+                |
+                v
+       +-----------------+     +-----------------+
+       |     结果       |---->|     学习       |
+       +--------+--------+     +--------+--------+
+                |                         |
+                +-------------------------+</code></pre>
+          <p><strong>说明</strong>: 这个图展示了决策、结果、学习之间的反馈循环。决策产生结果,结果提供学习,学习改进决策,形成持续优化的闭环。正反馈(+)强化有效决策,负反馈(-)纠正错误决策。</p>
+          <h2>输出层</h2>
+          <h3>最终输出格式</h3>
+          <pre><code>## 问题特征分析与要点匹配
+
+### 问题特征分析
+
+**问题类型**: [决策型/解释型/预测型/转换型]
+
+**关键要素**: [列出问题包含的关键要素]
+
+**问题尺度**: [个人层面/组织层面/系统层面]
+
+### 要点匹配结果
+
+**选中要点1**: [要点名称] (匹配度: [0.XX])
+
+**选中要点2**: [要点名称] (匹配度: [0.XX])
+
+### 匹配度说明
+
+[简要说明为什么选中这些点,匹配度如何计算的]
+
+## 深度分析
+
+### [要点1名称]
+
+[核心原理说明]
+
+[用判据过一遍问题]
+
+[给出具体分析结论]
+
+### [要点2名称]
+
+[核心原理说明]
+
+[用判据过一遍问题]
+
+[给出具体分析结论]
+
+## 决策建议
+
+[基于分析给出具体建议]</code></pre>
+          <hr>
+          <p style="font-family: 'STKaiti', 'KaiTi', 'Kaiti SC', '楷体', serif; color: var(--cn-ink-faint); text-align: center; font-size: 0.95rem; letter-spacing: 0.1em;">
+            —— 决策科学视角分析视角 · 完 ——
+          </p>
+        </div>
+
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="notes-on-rag.html">
+            <span class="label">上一篇</span>
+            <span class="title">七 · 架构视角</span>
+          </a>
+          <a class="next" href="../archive.html">
+            <span class="label">下一篇</span>
+            <span class="title">索引</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/pages/decision-science-perspective.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
+    <div class="container">
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 2026 · jeekeagle · 一本非商业的小书
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
