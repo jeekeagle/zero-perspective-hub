@@ -3,116 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Skill 的经济学 · 视角研究中心</title>
-  <meta name="description" content="当提示词开始可被交易、可被复用、可被打包 —— 一种新的微技能市场正在 prompt 层生长。" />
+  <title>经济学视角 · Zero-Perspective-Hub</title>
+  <meta name="description" content="从供需、交易、成本、激励的角度看 Agent 时代的"微技能市场"。" />
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style-cn.css" />
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="主导航">
-    <div class="navbar__inner">
-      <a class="navbar__brand" href="../index.html">
-        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
-        <b>Zero-Perspective-Hub</b>
+  <div class="cn-style-banner">
+    你正在浏览 <b>新中式美学</b> 风格
+    <a href="../index.html">切换到 现代科技 风格 →</a>
+  </div>
+
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <a class="cn-nav__brand" href="../index.html">
+        <span class="seal">零</span>
+        <span>Zero-Perspective-Hub</span>
       </a>
-      <ul class="navbar__links">
+      <ul class="cn-nav__links">
         <li><a href="../index.html">首页</a></li>
+        <li><a href="../intro.html">序言</a></li>
+        <li><a href="../index.html#perspectives">视角</a></li>
         <li><a href="../about.html">关于</a></li>
-        <li><a href="../archive.html">归档</a></li>
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
-      <div class="navbar__actions">
-        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      <div class="cn-nav__actions">
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>
   </nav>
 
-  <article class="article">
-    <header class="article__header">
-      <div class="article__eyebrow">观察 · 工具</div>
-      <h1 class="article__title">Skill 的经济学</h1>
-      <div class="article__meta">
-        <time>2026-05-28</time>
-        <span>·</span>
-        <span>约 5 分钟读完</span>
-        <span>·</span>
-        <span class="card__tag">Skill</span>
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="../intro.html">序言</a></li>
+        </ul>
       </div>
-    </header>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="when-models-think.html">一 · 分类学视角</a></li>
+          <li><a href="skill-economy.html" class="active">二 · 经济学视角</a></li>
+          <li><a href="prompt-as-program.html">三 · 程序视角</a></li>
+          <li><a href="agent-topology.html">四 · 拓扑学视角</a></li>
+          <li><a href="from-tool-to-colleague.html">五 · 关系视角</a></li>
+          <li><a href="notes-on-rag.html">六 · 架构视角</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="../archive.html">索引</a></li>
+          <li><a href="../about.html">关于</a></li>
+        </ul>
+      </div>
+    </aside>
 
-    <div class="article__body">
-      <p>
-        如果你 2024 年写过 prompt,2025 年大概率也写过。
-        但"把 prompt 当作可交付物"这个心智,大部分人是 2025 年下半年才养成的。
-      </p>
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="../index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <a href="../intro.html">序章</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">二 · 经济学视角</span>
+      </nav>
 
-      <h2>从一次性 prompt 到 Skill</h2>
-      <p>
-        一个 prompt 从"我这次问 AI 用的句子",变成"我下次还要用、别人也可能用、值得维护"的东西,
-        这中间发生了什么?
-      </p>
-      <p>
-        三件事:
-      </p>
-      <ul>
-        <li>模型能力稳定了 —— 同一个 prompt 重复跑,结果差异在可接受范围内。</li>
-        <li>任务模板化了 —— 我们开始发现,80% 的 prompt 其实是同一类任务的变体。</li>
-        <li>工具链出现了 —— 有 Git 一样的东西让我们管理这些 prompt,能版本化、能分享、能组合。</li>
-      </ul>
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">二</span>
+            <span class="cn-chapter-meta__vol">第一编 · 第二章</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <time>丙午 · 五月</time>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>约 5 分钟读完</span>
+          </div>
+          <h1 class="cn-chapter__title">经济学视角</h1>
+          <p class="cn-chapter__subtitle">从供需、交易、成本、激励的角度看 Agent 时代的"微技能市场"</p>
+          <div class="cn-chapter__meta">
+            <span class="tag">经济</span>
+            <span class="tag">市场</span>
+            <span class="tag">Skill</span>
+          </div>
+        </header>
 
-      <h2>微技能市场</h2>
-      <p>
-        接下来的事情很像早期 npm:有人写了一个好用的"翻译技能"放在 GitHub,
-        有人 fork 它改成"翻译 + 校对",又有人把几个小技能拼成"翻译工作流"。
-        <strong>一个二级的 prompt 市场就这样长出来了</strong>,只不过交易的不是代码,是认知流程。
-      </p>
+        <div class="cn-chapter__body">
+          <h2><span class="num">一</span>问题的提出</h2>
+          <p>
+            如果你 2024 年写过 prompt,2025 年大概率也写过。
+            但"把 prompt 当作可交付物"这个心智,大部分人是 2025 年下半年才养成的。
+          </p>
+          <p>
+            这中间发生了什么?一个很自然的解释:市场出现了。
+            而"市场"这件事,正是经济学视角的核心研究对象。
+          </p>
 
-      <p>
-        区别在于:
-      </p>
-      <ul>
-        <li>代码是确定的,prompt 不是 —— "运行结果"取决于模型本身。</li>
-        <li>代码可以被测试,prompt 很难 —— 你只能让别人再跑一遍,然后祈祷结果一致。</li>
-        <li>代码有依赖,prompt 有"反依赖" —— 你写的 prompt 强依赖于某个模型版本,模型一升级,prompt 可能就崩了。</li>
-      </ul>
+          <h2><span class="num">二</span>从一次性 prompt 到 Skill</h2>
+          <p>
+            一个 prompt 从"我这次问 AI 用的句子",变成"我下次还要用、别人也可能用、值得维护"的东西,
+            这中间发生了什么?
+          </p>
+          <p>三件事:</p>
+          <ul>
+            <li><strong>模型能力稳定了</strong> —— 同一个 prompt 重复跑,结果差异在可接受范围内。</li>
+            <li><strong>任务模板化了</strong> —— 我们开始发现,80% 的 prompt 其实是同一类任务的变体。</li>
+            <li><strong>工具链出现了</strong> —— 有 Git 一样的东西让我们管理这些 prompt,能版本化、能分享、能组合。</li>
+          </ul>
+          <p>
+            用经济学的语言:从"一次性消费品"变成了"可重复交易的资产"。
+          </p>
 
-      <h2>一个新的分工</h2>
-      <p>
-        我看到的分工是这样:一类人写<strong>通用技能</strong>(写邮件、改 bug、生成测试),
-        一类人写<strong>领域技能</strong>(法律审合同、医疗读片子、教学出题),
-        一类人写<strong>元技能</strong>(把上面两类组合起来,带状态机、带记忆、带纠错)。
-      </p>
+          <h2><span class="num">三</span>微技能市场</h2>
+          <p>
+            接下来的事情很像早期 npm:有人写了一个好用的"翻译技能"放在 GitHub,
+            有人 fork 它改成"翻译 + 校对",又有人把几个小技能拼成"翻译工作流"。
+            <strong>一个二级的 prompt 市场就这样长出来了</strong>,只不过交易的不是代码,是认知流程。
+          </p>
+          <p>它和代码市场有三点关键区别:</p>
+          <ul>
+            <li><strong>代码是确定的,prompt 不是</strong> —— "运行结果"取决于模型本身。</li>
+            <li><strong>代码可以被测试,prompt 很难</strong> —— 你只能让别人再跑一遍,然后祈祷结果一致。</li>
+            <li><strong>代码有依赖,prompt 有"反依赖"</strong> —— 你写的 prompt 强依赖于某个模型版本,模型一升级,prompt 可能就崩了。</li>
+          </ul>
 
-      <p>
-        第三类人最稀缺,也最像 90 年代的"系统架构师"——
-        他们不写具体技能,他们让一堆技能能互相说话。
-      </p>
+          <h2><span class="num">四</span>一个新的分工</h2>
+          <p>
+            我看到的分工是这样:一类人写<strong>通用技能</strong>(写邮件、改 bug、生成测试),
+            一类人写<strong>领域技能</strong>(法律审合同、医疗读片子、教学出题),
+            一类人写<strong>元技能</strong>(把上面两类组合起来,带状态机、带记忆、带纠错)。
+          </p>
+          <p>
+            第三类人最稀缺,也最像 90 年代的"系统架构师"——
+            他们不写具体技能,他们让一堆技能能互相说话。
+            在经济学里,他们接近"做市商"的角色:让市场更可交易,而不是亲自生产产品。
+          </p>
 
-      <h2>一个未解的问题</h2>
-      <p>
-        当你的"工作流" 100% 由 prompt 组成时,谁拥有这个工作流的<strong>产权</strong>?
-        是写 prompt 的人,是训模型的公司,还是"发现这个组合特别有效"的那位中间人?
-      </p>
+          <h2><span class="num">五</span>一个未解的问题</h2>
+          <p>
+            当你的"工作流" 100% 由 prompt 组成时,谁拥有这个工作流的<strong>产权</strong>?
+            是写 prompt 的人,是训模型的公司,还是"发现这个组合特别有效"的那位中间人?
+          </p>
+          <p>
+            我不知道答案。但我赌:
+            未来会有"Skill License",就像现在的 MIT / Apache 一样,
+            只是它授权的不是代码,而是某种认知工艺。
+          </p>
 
-      <p>
-        我不知道答案。但我赌:
-        未来会有"Skill License",就像现在的 MIT / Apache 一样,
-        只是它授权的不是代码,而是某种认知工艺。
-      </p>
-    </div>
+          <hr>
 
-    <footer class="article__footer">
-      <a href="when-models-think.html">← 上一篇:当模型开始"思考"</a>
-      <a href="prompt-as-program.html">下一篇:提示词是新的编程语言 →</a>
-    </footer>
-  </article>
+          <p style="font-family: 'STKaiti', 'KaiTi', 'Kaiti SC', '楷体', serif; color: var(--cn-ink-faint); text-align: center; font-size: 0.95rem; letter-spacing: 0.1em;">
+            —— 经济学视角 · 完 ——
+          </p>
+        </div>
 
-  <footer class="footer">
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="when-models-think.html">
+            <span class="label">上一篇</span>
+            <span class="title">一 · 分类学视角</span>
+          </a>
+          <a class="next" href="prompt-as-program.html">
+            <span class="label">下一篇</span>
+            <span class="title">三 · 程序视角</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/pages/skill-economy.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
     <div class="container">
-      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
-        <div>© 2026 Zero · 一个非商业的个人记录</div>
-        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 丙午年 · jeekeagle · 一本非商业的小书
       </div>
     </div>
   </footer>

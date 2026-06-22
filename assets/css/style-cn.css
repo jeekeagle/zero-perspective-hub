@@ -579,3 +579,385 @@ code {
   .cn-cta { padding: 0.6rem 1.2rem; font-size: 0.92rem; letter-spacing: 0.12em; }
   .cn-card { padding: 1.4rem 1.2rem; }
 }
+
+/* ============================================================
+   书式布局 (Book Layout)
+   仿照 Docusaurus 的两栏布局:左侧固定目录 + 右侧主内容
+   用于所有"书页"页面(intro / perspective / 索引 / 关于)
+   ============================================================ */
+
+.cn-book {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.8rem 4rem;
+}
+
+/* 左侧目录 */
+.cn-toc {
+  position: sticky;
+  top: 80px;
+  width: 240px;
+  flex-shrink: 0;
+  align-self: flex-start;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+  padding-right: 1rem;
+  border-right: 1px solid var(--cn-border);
+}
+.cn-toc__title {
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.35em;
+  text-indent: 0.35em;
+  color: var(--cn-ink-faint);
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px dashed var(--cn-border-soft);
+}
+.cn-toc__group {
+  margin-bottom: 1.4rem;
+}
+.cn-toc__group-label {
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--cn-vermilion);
+  margin-bottom: 0.5rem;
+  padding-left: 0.4rem;
+  font-weight: 500;
+}
+.cn-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cn-toc__list li {
+  margin: 0;
+  padding: 0;
+}
+.cn-toc__list a {
+  display: block;
+  padding: 0.32rem 0 0.32rem 0.9rem;
+  font-size: 0.92rem;
+  color: var(--cn-ink-light);
+  border-left: 2px solid transparent;
+  transition: all 0.15s ease;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+.cn-toc__list a:hover {
+  color: var(--cn-vermilion);
+  border-left-color: var(--cn-vermilion);
+  background: var(--cn-paper);
+}
+.cn-toc__list a.active {
+  color: var(--cn-vermilion);
+  border-left-color: var(--cn-vermilion);
+  font-weight: 500;
+  background: var(--cn-paper);
+}
+
+/* 主内容区 */
+.cn-book__main {
+  flex: 1;
+  min-width: 0;
+  max-width: 760px;
+}
+
+/* 面包屑 */
+.cn-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  font-size: 0.88rem;
+  color: var(--cn-ink-faint);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.08em;
+}
+.cn-breadcrumb a { color: var(--cn-ink-light); }
+.cn-breadcrumb a:hover { color: var(--cn-vermilion); }
+.cn-breadcrumb__sep { color: var(--cn-border-strong); }
+.cn-breadcrumb__current { color: var(--cn-ink); }
+
+/* 章首元信息(序/视角/方法) */
+.cn-chapter-meta {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  font-size: 0.85rem;
+  color: var(--cn-ink-faint);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.8rem;
+}
+.cn-chapter-meta__seal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.6em;
+  height: 1.6em;
+  background: var(--cn-vermilion);
+  color: var(--cn-paper);
+  font-size: 0.85em;
+  font-weight: 600;
+  border-radius: 2px;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+}
+.cn-chapter-meta__vol {
+  color: var(--cn-vermilion);
+  font-weight: 500;
+  letter-spacing: 0.2em;
+}
+.cn-chapter-meta__sep { color: var(--cn-border-strong); }
+
+/* 章标题 */
+.cn-chapter__title {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.25;
+  margin: 0 0 0.6rem;
+  color: var(--cn-ink);
+}
+.cn-chapter__subtitle {
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  font-size: 1.05rem;
+  color: var(--cn-ink-light);
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--cn-border);
+}
+.cn-chapter__meta {
+  display: flex;
+  gap: 1rem;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  font-size: 0.85rem;
+  color: var(--cn-ink-faint);
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.cn-chapter__meta .tag {
+  display: inline-block;
+  padding: 0.1rem 0.55rem;
+  border: 1px solid var(--cn-border);
+  border-radius: 2px;
+  font-size: 0.78rem;
+  color: var(--cn-ink-light);
+  background: var(--cn-paper);
+  letter-spacing: 0.05em;
+}
+
+/* 章正文 */
+.cn-chapter__body {
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--cn-ink);
+  letter-spacing: 0.03em;
+}
+.cn-chapter__body > * + * { margin-top: 1.2rem; }
+.cn-chapter__body h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--cn-border-soft);
+  color: var(--cn-ink);
+  position: relative;
+}
+.cn-chapter__body h2 .num {
+  color: var(--cn-vermilion);
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  margin-right: 0.6rem;
+  font-weight: 500;
+}
+.cn-chapter__body h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin: 1.8rem 0 0.6rem;
+  color: var(--cn-ink);
+}
+.cn-chapter__body p { margin: 0; }
+.cn-chapter__body ul,
+.cn-chapter__body ol { margin: 0; padding-left: 1.6rem; }
+.cn-chapter__body li { margin-bottom: 0.5rem; }
+.cn-chapter__body blockquote {
+  border-left: 3px solid var(--cn-vermilion);
+  background: var(--cn-paper);
+  padding: 0.8em 1.2em;
+  margin: 0;
+  font-style: normal;
+  color: var(--cn-ink-light);
+  border-radius: 0 4px 4px 0;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+}
+.cn-chapter__body pre {
+  background: var(--cn-paper);
+  border: 1px solid var(--cn-border);
+  padding: 1em 1.2em;
+  border-radius: 2px;
+  overflow-x: auto;
+  font-size: 0.9em;
+  line-height: 1.55;
+}
+.cn-chapter__body pre code { background: none; padding: 0; color: var(--cn-ink); }
+.cn-chapter__body code {
+  font-family: "SF Mono", "JetBrains Mono", Consolas, monospace;
+  font-size: 0.92em;
+  background: rgba(168, 50, 29, 0.08);
+  padding: 0.15em 0.4em;
+  border-radius: 2px;
+  color: var(--cn-vermilion);
+}
+.cn-chapter__body hr {
+  border: 0;
+  height: 1px;
+  background: var(--cn-border-soft);
+  margin: 2rem auto;
+  width: 60%;
+  position: relative;
+}
+.cn-chapter__body hr::before {
+  content: "❀";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--cn-bg);
+  color: var(--cn-vermilion);
+  padding: 0 0.8rem;
+  font-size: 0.9rem;
+}
+
+/* 章末导航(上一篇/下一篇) */
+.cn-chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--cn-border);
+}
+.cn-chapter-nav a {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--cn-border);
+  border-radius: 2px;
+  background: var(--cn-paper);
+  color: var(--cn-ink-light);
+  flex: 1;
+  min-width: 0;
+  transition: all 0.2s ease;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  text-decoration: none;
+}
+.cn-chapter-nav a:hover {
+  border-color: var(--cn-vermilion);
+  color: var(--cn-vermilion);
+  background: var(--cn-paper-light);
+}
+.cn-chapter-nav .label {
+  font-size: 0.78rem;
+  color: var(--cn-ink-faint);
+  letter-spacing: 0.2em;
+  margin-bottom: 0.3rem;
+}
+.cn-chapter-nav .title {
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: inherit;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.cn-chapter-nav .next { text-align: right; }
+.cn-chapter-nav .prev .label::before { content: "← "; }
+.cn-chapter-nav .next .label::after { content: " →"; }
+
+/* 章末元信息(编辑此页 / 报告问题 等链接) */
+.cn-chapter-edit {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  border-top: 1px dashed var(--cn-border-soft);
+  display: flex;
+  gap: 1.5rem;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+  font-size: 0.85rem;
+  color: var(--cn-ink-faint);
+  letter-spacing: 0.1em;
+  flex-wrap: wrap;
+}
+.cn-chapter-edit a {
+  color: var(--cn-ink-light);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.cn-chapter-edit a:hover { color: var(--cn-vermilion); }
+
+/* 序/前言/后记 等特殊页面 */
+.cn-prose {
+  max-width: 680px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 2;
+  color: var(--cn-ink);
+  letter-spacing: 0.03em;
+  font-family: "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+}
+.cn-prose > * + * { margin-top: 1.4rem; }
+.cn-prose h2 {
+  font-family: "Source Han Serif SC", "Noto Serif SC", "宋体", serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 2.2rem 0 0.8rem;
+  color: var(--cn-ink);
+  letter-spacing: 0.08em;
+}
+.cn-prose p { margin: 0; }
+.cn-prose blockquote {
+  border-left: 3px solid var(--cn-vermilion);
+  background: var(--cn-paper);
+  padding: 0.8em 1.2em;
+  margin: 0;
+  font-style: normal;
+  color: var(--cn-ink-light);
+  border-radius: 0 4px 4px 0;
+}
+
+/* 书式响应式 */
+@media (max-width: 996px) {
+  .cn-book {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem 1.5rem 3rem;
+  }
+  .cn-toc {
+    position: static;
+    width: 100%;
+    max-height: none;
+    border-right: 0;
+    border-bottom: 1px solid var(--cn-border);
+    padding: 0 0 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .cn-toc__group { margin-bottom: 1rem; }
+  .cn-toc__list { columns: 2; column-gap: 1.5rem; }
+  .cn-toc__list a { padding: 0.25rem 0 0.25rem 0.6rem; font-size: 0.88rem; }
+}
+@media (max-width: 480px) {
+  .cn-toc__list { columns: 1; }
+  .cn-chapter-nav { flex-direction: column; }
+  .cn-chapter-nav .next { text-align: left; }
+}

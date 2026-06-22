@@ -3,147 +3,214 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAG 不是银弹,但它改变了什么 · 视角研究中心</title>
-  <meta name="description" content="检索增强被吹成万能解药,被骂成临时补丁。两种说法都有道理 —— 关键看你怎么用上下文窗口。" />
+  <title>架构视角 · Zero-Perspective-Hub</title>
+  <meta name="description" content="从知识的版本、引用、按需加载,看 RAG 改变了什么、没改变什么。" />
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style-cn.css" />
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="主导航">
-    <div class="navbar__inner">
-      <a class="navbar__brand" href="../index.html">
-        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
-        <b>Zero-Perspective-Hub</b>
+  <div class="cn-style-banner">
+    你正在浏览 <b>新中式美学</b> 风格
+    <a href="../index.html">切换到 现代科技 风格 →</a>
+  </div>
+
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <a class="cn-nav__brand" href="../index.html">
+        <span class="seal">零</span>
+        <span>Zero-Perspective-Hub</span>
       </a>
-      <ul class="navbar__links">
+      <ul class="cn-nav__links">
         <li><a href="../index.html">首页</a></li>
+        <li><a href="../intro.html">序言</a></li>
+        <li><a href="../index.html#perspectives">视角</a></li>
         <li><a href="../about.html">关于</a></li>
-        <li><a href="../archive.html">归档</a></li>
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
-      <div class="navbar__actions">
-        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      <div class="cn-nav__actions">
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>
   </nav>
 
-  <article class="article">
-    <header class="article__header">
-      <div class="article__eyebrow">笔记 · 架构</div>
-      <h1 class="article__title">RAG 不是银弹,但它改变了什么</h1>
-      <div class="article__meta">
-        <time>2026-03-18</time>
-        <span>·</span>
-        <span>约 5 分钟读完</span>
-        <span>·</span>
-        <span class="card__tag">RAG</span>
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="../intro.html">序言</a></li>
+        </ul>
       </div>
-    </header>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="when-models-think.html">一 · 分类学视角</a></li>
+          <li><a href="skill-economy.html">二 · 经济学视角</a></li>
+          <li><a href="prompt-as-program.html">三 · 程序视角</a></li>
+          <li><a href="agent-topology.html">四 · 拓扑学视角</a></li>
+          <li><a href="from-tool-to-colleague.html">五 · 关系视角</a></li>
+          <li><a href="notes-on-rag.html" class="active">六 · 架构视角</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="../archive.html">索引</a></li>
+          <li><a href="../about.html">关于</a></li>
+        </ul>
+      </div>
+    </aside>
 
-    <div class="article__body">
-      <p>
-        2024 年,RAG(Retrieval-Augmented Generation)被吹成 LLM 的未来。
-        2025 年,被骂成"掩耳盗铃的临时补丁"。
-        2026 年,我自己的看法是:<strong>它没死,只是换了个位置</strong>。
-      </p>
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="../index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <a href="../intro.html">序章</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">六 · 架构视角</span>
+      </nav>
 
-      <h2>RAG 本质上在做什么</h2>
-      <p>
-        简化一下:RAG 就是"在让模型回答之前,先去你的数据里找几段相关的,
-        把它们一起塞进 prompt"。
-      </p>
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">六</span>
+            <span class="cn-chapter-meta__vol">第一编 · 第六章</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <time>丙午 · 三月</time>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>约 5 分钟读完</span>
+          </div>
+          <h1 class="cn-chapter__title">架构视角</h1>
+          <p class="cn-chapter__subtitle">从知识的版本、引用、按需加载,看 RAG 改变了什么、没改变什么</p>
+          <div class="cn-chapter__meta">
+            <span class="tag">架构</span>
+            <span class="tag">RAG</span>
+            <span class="tag">知识</span>
+          </div>
+        </header>
 
-      <p>
-        它的真正贡献不是"让模型变准"(其实有时候还更不准),
-        而是<strong>把"知道什么"和"会怎么想"分开了</strong>。
-      </p>
+        <div class="cn-chapter__body">
+          <h2><span class="num">一</span>问题的提出</h2>
+          <p>
+            2024 年,RAG(Retrieval-Augmented Generation)被吹成 LLM 的未来。
+            2025 年,被骂成"掩耳盗铃的临时补丁"。
+            2026 年,我自己的看法是:<strong>它没死,只是换了个位置</strong>。
+          </p>
 
-      <h2>它真正改变的事</h2>
+          <h2><span class="num">二</span>RAG 本质上在做什么</h2>
+          <p>
+            简化一下:RAG 就是"在让模型回答之前,先去你的数据里找几段相关的,
+            把它们一起塞进 prompt"。
+          </p>
+          <p>
+            它的真正贡献不是"让模型变准"(其实有时候还更不准),
+            而是<strong>把"知道什么"和"会怎么想"分开了</strong>。
+          </p>
 
-      <h3>1. 知识有了"版本"</h3>
-      <p>
-        模型权重是冻结的,但你塞进去的检索结果可以是今天的。
-        这意味着:你不再需要"再训练一次"来更新知识,你只需要更新你的文档库。
-      </p>
-      <p>
-        听起来像数据库的更新。某种意义上,就是。
-      </p>
+          <h2><span class="num">三</span>它真正改变的事</h2>
 
-      <h3>2. 引用变得可能</h3>
-      <p>
-        模型直接回答,你说"你怎么知道"——它给不出出处。
-        RAG 之后,模型回答里夹着"基于文档 X 的第 3 段",可追溯。
-      </p>
-      <p>
-        这在法律、医疗、企业内部场景里,是<strong>刚需</strong>。
-      </p>
+          <h3>1. 知识有了"版本"</h3>
+          <p>
+            模型权重是冻结的,但你塞进去的检索结果可以是今天的。
+            这意味着:你不再需要"再训练一次"来更新知识,你只需要更新你的文档库。
+          </p>
+          <p>
+            听起来像数据库的更新。某种意义上,就是。
+          </p>
 
-      <h3>3. 上下文窗口的玩法变了</h3>
-      <p>
-        以前我们想办法把模型"装下"所有信息。
-        现在我们接受装不下,改成"现场取用"——每次任务前现找相关的。
-      </p>
-      <p>
-        思路更接近操作系统的"按需加载",而不是"全部载入内存"。
-      </p>
+          <h3>2. 引用变得可能</h3>
+          <p>
+            模型直接回答,你说"你怎么知道"——它给不出出处。
+            RAG 之后,模型回答里夹着"基于文档 X 的第 3 段",可追溯。
+          </p>
+          <p>
+            这在法律、医疗、企业内部场景里,是<strong>刚需</strong>。
+          </p>
 
-      <h2>RAG 解决不了的问题</h2>
+          <h3>3. 上下文窗口的玩法变了</h3>
+          <p>
+            以前我们想办法把模型"装下"所有信息。
+            现在我们接受装不下,改成"现场取用"——每次任务前现找相关的。
+          </p>
+          <p>
+            思路更接近操作系统的"按需加载",而不是"全部载入内存"。
+          </p>
 
-      <h3>1. 检索召回率</h3>
-      <p>
-        检索找不到相关文档,后面再聪明也白搭。
-        这个问题,embedding 模型解决一半,rerank 模型解决另一半,合起来还差点。
-      </p>
+          <h2><span class="num">四</span>RAG 解决不了的问题</h2>
 
-      <h3>2. 上下文混乱</h3>
-      <p>
-        把 20 段文档塞进 prompt,模型会"注意力涣散"——每段都被部分看到,
-        但哪段都没被认真看。这就是"中间丢失"问题。
-      </p>
+          <h3>1. 检索召回率</h3>
+          <p>
+            检索找不到相关文档,后面再聪明也白搭。
+            这个问题,embedding 模型解决一半,rerank 模型解决另一半,合起来还差点。
+          </p>
 
-      <h3>3. 写入方向</h3>
-      <p>
-        RAG 主要解决"读",不解决"写"。
-        你不能让模型把新知识写回文档库并保持一致——你得自己写。
-      </p>
+          <h3>2. 上下文混乱</h3>
+          <p>
+            把 20 段文档塞进 prompt,模型会"注意力涣散"——每段都被部分看到,
+            但哪段都没被认真看。这就是"中间丢失"问题。
+          </p>
 
-      <h2>一个架构上的判断</h2>
-      <p>
-        我自己项目里的结论:
-      </p>
+          <h3>3. 写入方向</h3>
+          <p>
+            RAG 主要解决"读",不解决"写"。
+            你不能让模型把新知识写回文档库并保持一致——你得自己写。
+          </p>
 
-      <blockquote>
-        RAG 不是替代 fine-tuning,而是<strong>配合</strong>它。
-        微调给模型"风格和习惯",RAG 给模型"事实和时效"。
-        一个管"怎么说",一个管"说什么"。
-      </blockquote>
+          <h2><span class="num">五</span>一个架构上的判断</h2>
+          <p>
+            我自己项目里的结论:
+          </p>
+          <blockquote>
+            RAG 不是替代 fine-tuning,而是<strong>配合</strong>它。
+            微调给模型"风格和习惯",RAG 给模型"事实和时效"。
+            一个管"怎么说",一个管"说什么"。
+          </blockquote>
 
-      <h2>一个长期的判断</h2>
-      <p>
-        我赌:未来不会出现"RAG 2.0 取代一切"的范式。
-        会出现的是<strong>更细粒度的检索</strong>:
-        不再是"塞几段文档",而是"按需激活某些参数、某些记忆、某些工具"。
-        检索的对象从文档,扩展到<strong>任何可调用的东西</strong>。
-      </p>
+          <h2><span class="num">六</span>一个长期的判断</h2>
+          <p>
+            我赌:未来不会出现"RAG 2.0 取代一切"的范式。
+            会出现的是<strong>更细粒度的检索</strong>:
+            不再是"塞几段文档",而是"按需激活某些参数、某些记忆、某些工具"。
+            检索的对象从文档,扩展到<strong>任何可调用的东西</strong>。
+          </p>
+          <p>
+            到那时候,RAG 这个词会消失。但"按需取用"这个思想,
+            会变成 Agent 的基本操作。
+          </p>
 
-      <p>
-        到那时候,RAG 这个词会消失。但"按需取用"这个思想,
-        会变成 Agent 的基本操作。
-      </p>
-    </div>
+          <hr>
 
-    <footer class="article__footer">
-      <a href="from-tool-to-colleague.html">← 上一篇:从工具到同事</a>
-      <a href="../index.html">回到首页 →</a>
-    </footer>
-  </article>
+          <p style="font-family: 'STKaiti', 'KaiTi', 'Kaiti SC', '楷体', serif; color: var(--cn-ink-faint); text-align: center; font-size: 0.95rem; letter-spacing: 0.1em;">
+            —— 架构视角 · 完 · 第一编亦完 ——
+          </p>
+        </div>
 
-  <footer class="footer">
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="from-tool-to-colleague.html">
+            <span class="label">上一篇</span>
+            <span class="title">五 · 关系视角</span>
+          </a>
+          <a class="next" href="../archive.html">
+            <span class="label">下一篇</span>
+            <span class="title">索引</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/pages/notes-on-rag.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
     <div class="container">
-      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
-        <div>© 2026 Zero · 一个非商业的个人记录</div>
-        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 丙午年 · jeekeagle · 一本非商业的小书
       </div>
     </div>
   </footer>

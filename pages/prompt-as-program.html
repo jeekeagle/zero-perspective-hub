@@ -3,61 +3,113 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>提示词是新的编程语言 · 视角研究中心</title>
-  <meta name="description" content="自然语言正在获得类型系统、模块化与版本管理 —— 但和传统编程不同,它的'编译'发生在模型权重里。" />
+  <title>程序视角 · Zero-Perspective-Hub</title>
+  <meta name="description" content="把提示词当作"源码",看它如何获得类型、模块、版本这些程序性特征。" />
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style-cn.css" />
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="主导航">
-    <div class="navbar__inner">
-      <a class="navbar__brand" href="../index.html">
-        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
-        <b>Zero-Perspective-Hub</b>
+  <div class="cn-style-banner">
+    你正在浏览 <b>新中式美学</b> 风格
+    <a href="../index.html">切换到 现代科技 风格 →</a>
+  </div>
+
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <a class="cn-nav__brand" href="../index.html">
+        <span class="seal">零</span>
+        <span>Zero-Perspective-Hub</span>
       </a>
-      <ul class="navbar__links">
+      <ul class="cn-nav__links">
         <li><a href="../index.html">首页</a></li>
+        <li><a href="../intro.html">序言</a></li>
+        <li><a href="../index.html#perspectives">视角</a></li>
         <li><a href="../about.html">关于</a></li>
-        <li><a href="../archive.html">归档</a></li>
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
-      <div class="navbar__actions">
-        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      <div class="cn-nav__actions">
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>
   </nav>
 
-  <article class="article">
-    <header class="article__header">
-      <div class="article__eyebrow">笔记 · 编程</div>
-      <h1 class="article__title">提示词是新的编程语言</h1>
-      <div class="article__meta">
-        <time>2026-05-10</time>
-        <span>·</span>
-        <span>约 4 分钟读完</span>
-        <span>·</span>
-        <span class="card__tag">Prompt</span>
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="../intro.html">序言</a></li>
+        </ul>
       </div>
-    </header>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="when-models-think.html">一 · 分类学视角</a></li>
+          <li><a href="skill-economy.html">二 · 经济学视角</a></li>
+          <li><a href="prompt-as-program.html" class="active">三 · 程序视角</a></li>
+          <li><a href="agent-topology.html">四 · 拓扑学视角</a></li>
+          <li><a href="from-tool-to-colleague.html">五 · 关系视角</a></li>
+          <li><a href="notes-on-rag.html">六 · 架构视角</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="../archive.html">索引</a></li>
+          <li><a href="../about.html">关于</a></li>
+        </ul>
+      </div>
+    </aside>
 
-    <div class="article__body">
-      <p>
-        很多人对"prompt 是程序"这个说法嗤之以鼻。我理解,
-        但我越来越觉得,这是真的 —— 只是它运行在一台你看不见的机器上。
-      </p>
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="../index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <a href="../intro.html">序章</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">三 · 程序视角</span>
+      </nav>
 
-      <h2>它越来越像程序</h2>
-      <p>
-        早期 prompt 是一段自然语言描述:"请你扮演一个友好的客服,回答用户的提问。"
-        那不是程序,那是一段<strong>说明文</strong>。
-      </p>
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">三</span>
+            <span class="cn-chapter-meta__vol">第一编 · 第三章</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <time>丙午 · 五月</time>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>约 4 分钟读完</span>
+          </div>
+          <h1 class="cn-chapter__title">程序视角</h1>
+          <p class="cn-chapter__subtitle">把提示词当作"源码",看它如何获得类型、模块、版本这些程序性特征</p>
+          <div class="cn-chapter__meta">
+            <span class="tag">编程</span>
+            <span class="tag">DSL</span>
+            <span class="tag">Prompt</span>
+          </div>
+        </header>
 
-      <p>
-        现在的 prompt 长这样:
-      </p>
+        <div class="cn-chapter__body">
+          <h2><span class="num">一</span>问题的提出</h2>
+          <p>
+            很多人对"prompt 是程序"这个说法嗤之以鼻。我理解,
+            但我越来越觉得,这是真的 —— 只是它运行在一台你看不见的机器上。
+          </p>
+          <p>
+            戴"程序"这副眼镜看 prompt,我们能立刻发现它和传统程序的异同。
+            同的部分可以借鉴,异的部分必须新造。
+          </p>
 
-      <pre><code># role
+          <h2><span class="num">二</span>它越来越像程序</h2>
+          <p>
+            早期 prompt 是一段自然语言描述:"请你扮演一个友好的客服,回答用户的提问。"
+            那不是程序,那是一段<strong>说明文</strong>。
+          </p>
+          <p>现在的 prompt 长这样:</p>
+
+          <pre><code># role
 你是 {{ company_name }} 的高级客服。
 
 # context
@@ -76,47 +128,67 @@
   "confidence": "0-1"
 }</code></pre>
 
-      <p>
-        这不就是带模板的 DSL 吗?
-      </p>
+          <p>这不就是带模板的 DSL 吗?</p>
 
-      <h2>三个相似之处</h2>
-      <ul>
-        <li><strong>类型系统</strong> —— 通过 output_schema 强制模型输出结构化数据,这是运行时类型检查。</li>
-        <li><strong>模块化</strong> —— 大 prompt 拆成小 prompt 拼装,这是函数组合。</li>
-        <li><strong>版本管理</strong> —— 同一个 skill 不同 prompt 版本的 diff,这是语义化版本。</li>
-      </ul>
+          <h2><span class="num">三</span>三个相似之处</h2>
+          <ul>
+            <li><strong>类型系统</strong> —— 通过 output_schema 强制模型输出结构化数据,这是运行时类型检查。</li>
+            <li><strong>模块化</strong> —— 大 prompt 拆成小 prompt 拼装,这是函数组合。</li>
+            <li><strong>版本管理</strong> —— 同一个 skill 不同 prompt 版本的 diff,这是语义化版本。</li>
+          </ul>
 
-      <h2>三个不一样的地方</h2>
-      <ul>
-        <li><strong>编译是模糊的</strong> —— 同一个 prompt 跑十次,得到十次略有不同的结果。</li>
-        <li><strong>依赖是隐式的</strong> —— 你的 prompt 强依赖于某个模型版本,但这层依赖不在你的代码里,而在模型权重里。</li>
-        <li><strong>调试是叙事性的</strong> —— 你不能"打断点",你只能反复"问它当时在想什么"。</li>
-      </ul>
+          <h2><span class="num">四</span>三个不一样的地方</h2>
+          <ul>
+            <li><strong>编译是模糊的</strong> —— 同一个 prompt 跑十次,得到十次略有不同的结果。</li>
+            <li><strong>依赖是隐式的</strong> —— 你的 prompt 强依赖于某个模型版本,但这层依赖不在你的代码里,而在模型权重里。</li>
+            <li><strong>调试是叙事性的</strong> —— 你不能"打断点",你只能反复"问它当时在想什么"。</li>
+          </ul>
+          <p>
+            这三个"不一样"不是缺陷,而是这种新程序的<strong>本质特征</strong>。
+            试图用传统程序的标准去评价它,会错过它真正擅长的场景。
+          </p>
 
-      <h2>一个结论</h2>
-      <p>
-        我不再把 prompt 当作文本。我把它当作源码。
-        源码就该有:版本控制、单元测试、code review、重构历史。
-      </p>
+          <h2><span class="num">五</span>一个结论</h2>
+          <p>
+            我不再把 prompt 当作文本。我把它当作源码。
+            源码就该有:版本控制、单元测试、code review、重构历史。
+          </p>
+          <p>
+            那些只把 prompt 当作"问 AI 的句子"的人,
+            就像 2005 年还在用 HTML 写网站 —— 不是不能,但效率差一个数量级。
+          </p>
 
-      <p>
-        那些只把 prompt 当作"问 AI 的句子"的人,
-        就像 2005 年还在用 HTML 写网站 —— 不是不能,但效率差一个数量级。
-      </p>
-    </div>
+          <hr>
 
-    <footer class="article__footer">
-      <a href="skill-economy.html">← 上一篇:Skill 的经济学</a>
-      <a href="agent-topology.html">下一篇:Agent 协作的拓扑学 →</a>
-    </footer>
-  </article>
+          <p style="font-family: 'STKaiti', 'KaiTi', 'Kaiti SC', '楷体', serif; color: var(--cn-ink-faint); text-align: center; font-size: 0.95rem; letter-spacing: 0.1em;">
+            —— 程序视角 · 完 ——
+          </p>
+        </div>
 
-  <footer class="footer">
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="skill-economy.html">
+            <span class="label">上一篇</span>
+            <span class="title">二 · 经济学视角</span>
+          </a>
+          <a class="next" href="agent-topology.html">
+            <span class="label">下一篇</span>
+            <span class="title">四 · 拓扑学视角</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/pages/prompt-as-program.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
     <div class="container">
-      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
-        <div>© 2026 Zero · 一个非商业的个人记录</div>
-        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 丙午年 · jeekeagle · 一本非商业的小书
       </div>
     </div>
   </footer>

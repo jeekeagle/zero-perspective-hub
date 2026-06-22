@@ -3,130 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agent 协作的拓扑学 · 视角研究中心</title>
-  <meta name="description" content="单体 Agent 不够用之后,我们开始画图 —— 串行、并行、投票、监督。每种拓扑都对应一种组织哲学。" />
+  <title>拓扑学视角 · Zero-Perspective-Hub</title>
+  <meta name="description" content="把 Agent 协作画成图,看串行、并行、投票、监督这些结构背后的组织哲学。" />
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style-cn.css" />
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="主导航">
-    <div class="navbar__inner">
-      <a class="navbar__brand" href="../index.html">
-        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
-        <b>Zero-Perspective-Hub</b>
+  <div class="cn-style-banner">
+    你正在浏览 <b>新中式美学</b> 风格
+    <a href="../index.html">切换到 现代科技 风格 →</a>
+  </div>
+
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <a class="cn-nav__brand" href="../index.html">
+        <span class="seal">零</span>
+        <span>Zero-Perspective-Hub</span>
       </a>
-      <ul class="navbar__links">
+      <ul class="cn-nav__links">
         <li><a href="../index.html">首页</a></li>
+        <li><a href="../intro.html">序言</a></li>
+        <li><a href="../index.html#perspectives">视角</a></li>
         <li><a href="../about.html">关于</a></li>
-        <li><a href="../archive.html">归档</a></li>
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
-      <div class="navbar__actions">
-        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      <div class="cn-nav__actions">
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>
   </nav>
 
-  <article class="article">
-    <header class="article__header">
-      <div class="article__eyebrow">观察 · 协作</div>
-      <h1 class="article__title">Agent 协作的拓扑学</h1>
-      <div class="article__meta">
-        <time>2026-04-22</time>
-        <span>·</span>
-        <span>约 5 分钟读完</span>
-        <span>·</span>
-        <span class="card__tag">Agent</span>
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="../intro.html">序言</a></li>
+        </ul>
       </div>
-    </header>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="when-models-think.html">一 · 分类学视角</a></li>
+          <li><a href="skill-economy.html">二 · 经济学视角</a></li>
+          <li><a href="prompt-as-program.html">三 · 程序视角</a></li>
+          <li><a href="agent-topology.html" class="active">四 · 拓扑学视角</a></li>
+          <li><a href="from-tool-to-colleague.html">五 · 关系视角</a></li>
+          <li><a href="notes-on-rag.html">六 · 架构视角</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="../archive.html">索引</a></li>
+          <li><a href="../about.html">关于</a></li>
+        </ul>
+      </div>
+    </aside>
 
-    <div class="article__body">
-      <p>
-        2024 年,大家还在比谁的单体 Agent 更强。
-        2025 年,所有人都在画图。
-      </p>
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="../index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <a href="../intro.html">序章</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">四 · 拓扑学视角</span>
+      </nav>
 
-      <h2>三种基本拓扑</h2>
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">四</span>
+            <span class="cn-chapter-meta__vol">第一编 · 第四章</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <time>丙午 · 四月</time>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>约 5 分钟读完</span>
+          </div>
+          <h1 class="cn-chapter__title">拓扑学视角</h1>
+          <p class="cn-chapter__subtitle">把 Agent 协作画成图,看串行、并行、投票、监督这些结构背后的组织哲学</p>
+          <div class="cn-chapter__meta">
+            <span class="tag">结构</span>
+            <span class="tag">组织</span>
+            <span class="tag">Agent</span>
+          </div>
+        </header>
 
-      <h3>1. 串行(流水线)</h3>
-      <p>
-        A → B → C → D。每个 Agent 干一件事,把结果丢给下一个。
-        像工厂流水线,效率高,但一个卡住全卡住。
-      </p>
-      <p>
-        <strong>适用</strong>:流程清晰、步骤可拆的任务 —— 写代码、生成报告、做多轮审核。
-      </p>
+        <div class="cn-chapter__body">
+          <h2><span class="num">一</span>问题的提出</h2>
+          <p>
+            2024 年,大家还在比谁的单体 Agent 更强。
+            2025 年,所有人都在画图。
+          </p>
+          <p>
+            "画图"这件事,就是拓扑学视角的核心动作。
+            一旦我们开始把"协作"画成"图",就会发现:不同的画法,背后是不同的<strong>组织哲学</strong>。
+          </p>
 
-      <h3>2. 并行(投票 / 竞争)</h3>
-      <p>
-        同一个任务给 N 个 Agent 同时做,然后选最好的,或者让它们互相打分。
-        像陪审团,质量高,但费钱。
-      </p>
-      <p>
-        <strong>适用</strong>:质量比成本重要的场景 —— 关键决策、复杂推理、需要多种视角的问题。
-      </p>
+          <h2><span class="num">二</span>三种基本拓扑</h2>
 
-      <h3>3. 监督(分层)</h3>
-      <p>
-        一个"老板 Agent"指挥一群"员工 Agent",老板负责拆任务、检查结果、决定重做。
-        像公司,灵活但需要好的老板。
-      </p>
-      <p>
-        <strong>适用</strong>:复杂、开放、目标不明确的任务 —— 科研、长期项目、用户陪伴。
-      </p>
+          <h3>1. 串行(流水线)</h3>
+          <p>
+            A → B → C → D。每个 Agent 干一件事,把结果丢给下一个。
+            像工厂流水线,效率高,但一个卡住全卡住。
+          </p>
+          <p>
+            <strong>适用</strong>:流程清晰、步骤可拆的任务 —— 写代码、生成报告、做多轮审核。
+          </p>
 
-      <h2>实际系统是混合的</h2>
-      <p>
-        真实生产里几乎没有人只用一种拓扑。
-        我自己跑过的几个项目,大致是:
-      </p>
+          <h3>2. 并行(投票 / 竞争)</h3>
+          <p>
+            同一个任务给 N 个 Agent 同时做,然后选最好的,或者让它们互相打分。
+            像陪审团,质量高,但费钱。
+          </p>
+          <p>
+            <strong>适用</strong>:质量比成本重要的场景 —— 关键决策、复杂推理、需要多种视角的问题。
+          </p>
 
-      <pre><code>用户输入
+          <h3>3. 监督(分层)</h3>
+          <p>
+            一个"老板 Agent"指挥一群"员工 Agent",老板负责拆任务、检查结果、决定重做。
+            像公司,灵活但需要好的老板。
+          </p>
+          <p>
+            <strong>适用</strong>:复杂、开放、目标不明确的任务 —— 科研、长期项目、用户陪伴。
+          </p>
+
+          <h2><span class="num">三</span>实际系统是混合的</h2>
+          <p>
+            真实生产里几乎没有人只用一种拓扑。
+            我自己跑过的几个项目,大致是:
+          </p>
+
+          <pre><code>用户输入
   └─ 监督层(老板 Agent)
       ├─ 串行子流 1(规划 → 搜索 → 整理)
       ├─ 并行子流 2(三个审稿人投票)
       └─ 监督层回收 → 输出</code></pre>
 
-      <p>
-        也就是说,我们其实在<strong>画组织架构图</strong>。
-        老板在分活、员工在执行、HR 在做 review —— 全套人类组织语言都搬过来了。
-      </p>
+          <p>
+            也就是说,我们其实在<strong>画组织架构图</strong>。
+            老板在分活、员工在执行、HR 在做 review —— 全套人类组织语言都搬过来了。
+          </p>
 
-      <h2>一个有意思的观察</h2>
-      <p>
-        我做了一些小规模实验,发现:
-      </p>
-      <blockquote>
-        选哪种拓扑,和任务的<strong>模糊度</strong>高度相关。
-        越模糊的任务,越需要监督层;越清晰的任务,越应该串行。
-        并行适合<strong>关键路径</strong>,不适合日常。
-      </blockquote>
+          <h2><span class="num">四</span>一个有意思的观察</h2>
+          <p>
+            我做了一些小规模实验,发现:
+          </p>
+          <blockquote>
+            选哪种拓扑,和任务的<strong>模糊度</strong>高度相关。
+            越模糊的任务,越需要监督层;越清晰的任务,越应该串行。
+            并行适合<strong>关键路径</strong>,不适合日常。
+          </blockquote>
+          <p>
+            这其实和人类组织一样:流水线工人不需要老板,研究员必须有导师。
+            我们在重新发明组织管理学 —— 只不过这次的对象不是人,是 AI。
+          </p>
 
-      <p>
-        这其实和人类组织一样:流水线工人不需要老板,研究员必须有导师。
-        我们在重新发明组织管理学 —— 只不过这次的对象不是人,是 AI。
-      </p>
+          <h2><span class="num">五</span>一个判断</h2>
+          <p>
+            我赌:未来一年会出现"Agent 拓扑描述语言",类似今天的工作流引擎(BPMN),
+            但语义是 AI-native 的。我们会开始争论:
+            "你这个组织设计有反模式" —— 像今天 code review 一样。
+          </p>
 
-      <h2>一个判断</h2>
-      <p>
-        我赌:未来一年会出现"Agent 拓扑描述语言",类似今天的工作流引擎(BPMN),
-        但语义是 AI-native 的。我们会开始争论:
-        "你这个组织设计有反模式" —— 像今天 code review 一样。
-      </p>
-    </div>
+          <hr>
 
-    <footer class="article__footer">
-      <a href="prompt-as-program.html">← 上一篇:提示词是新的编程语言</a>
-      <a href="from-tool-to-colleague.html">下一篇:从工具到同事 →</a>
-    </footer>
-  </article>
+          <p style="font-family: 'STKaiti', 'KaiTi', 'Kaiti SC', '楷体', serif; color: var(--cn-ink-faint); text-align: center; font-size: 0.95rem; letter-spacing: 0.1em;">
+            —— 拓扑学视角 · 完 ——
+          </p>
+        </div>
 
-  <footer class="footer">
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="prompt-as-program.html">
+            <span class="label">上一篇</span>
+            <span class="title">三 · 程序视角</span>
+          </a>
+          <a class="next" href="from-tool-to-colleague.html">
+            <span class="label">下一篇</span>
+            <span class="title">五 · 关系视角</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/pages/agent-topology.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
     <div class="container">
-      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
-        <div>© 2026 Zero · 一个非商业的个人记录</div>
-        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 丙午年 · jeekeagle · 一本非商业的小书
       </div>
     </div>
   </footer>

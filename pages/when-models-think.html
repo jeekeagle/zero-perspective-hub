@@ -3,111 +3,194 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>当模型开始"思考" · 视角研究中心</title>
-  <meta name="description" content="从一次性回答到多步推理,LLM 正在悄悄变成另一种东西。" />
+  <title>分类学视角 · Zero-Perspective-Hub</title>
+  <meta name="description" content="从分类原则、分类方法及其背后的认知逻辑、权力结构和演化规律看事物。" />
   <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
-  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/style-cn.css" />
   <script src="../assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="主导航">
-    <div class="navbar__inner">
-      <a class="navbar__brand" href="../index.html">
-        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
-        <b>Zero-Perspective-Hub</b>
+  <div class="cn-style-banner">
+    你正在浏览 <b>新中式美学</b> 风格
+    <a href="../index.html">切换到 现代科技 风格 →</a>
+  </div>
+
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <a class="cn-nav__brand" href="../index.html">
+        <span class="seal">零</span>
+        <span>Zero-Perspective-Hub</span>
       </a>
-      <ul class="navbar__links">
+      <ul class="cn-nav__links">
         <li><a href="../index.html">首页</a></li>
+        <li><a href="../intro.html">序言</a></li>
+        <li><a href="../index.html#perspectives">视角</a></li>
         <li><a href="../about.html">关于</a></li>
-        <li><a href="../archive.html">归档</a></li>
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
-      <div class="navbar__actions">
-        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      <div class="cn-nav__actions">
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>
   </nav>
 
-  <article class="article">
-    <header class="article__header">
-      <div class="article__eyebrow">观察 · 模型</div>
-      <h1 class="article__title">当模型开始"思考"</h1>
-      <div class="article__meta">
-        <time>2026-06-15</time>
-        <span>·</span>
-        <span>约 6 分钟读完</span>
-        <span>·</span>
-        <span class="card__tag">LLM</span>
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="../intro.html">序言</a></li>
+        </ul>
       </div>
-    </header>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="when-models-think.html" class="active">一 · 分类学视角</a></li>
+          <li><a href="skill-economy.html">二 · 经济学视角</a></li>
+          <li><a href="prompt-as-program.html">三 · 程序视角</a></li>
+          <li><a href="agent-topology.html">四 · 拓扑学视角</a></li>
+          <li><a href="from-tool-to-colleague.html">五 · 关系视角</a></li>
+          <li><a href="notes-on-rag.html">六 · 架构视角</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="../archive.html">索引</a></li>
+          <li><a href="../about.html">关于</a></li>
+        </ul>
+      </div>
+    </aside>
 
-    <div class="article__body">
-      <p>
-        2023 年大家还在讨论"模型会不会胡说"的时候,问题就已经不是模型会不会思考了。
-        问题是:模型什么时候开始,我们就要开始担心它"想多了"。
-      </p>
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="../index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <a href="../intro.html">序章</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">一 · 分类学视角</span>
+      </nav>
 
-      <h2>分镜头</h2>
-      <p>
-        早一代的 LLM 像一个非常博学但嘴比脑快的人 —— 你问什么它就答什么,
-        没有"等一下,让我看看这个问题的前提对不对"这一说。
-      </p>
-      <p>
-        现在不一样了。Chain-of-Thought、ReAct、Tree of Thoughts、Reflection、Self-Critique,
-        这些机制加起来,等于在模型内部装了一个小型舞台:它先把问题分镜,
-        然后在镜头上来回切换,有时候回头改分镜,有时候叫自己"再来一遍"。
-      </p>
-      <blockquote>
-        这不是"模型变聪明了",这是问题的形状变了。
-      </blockquote>
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">一</span>
+            <span class="cn-chapter-meta__vol">第一编 · 第一章</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <time>丙午 · 六月</time>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>约 6 分钟读完</span>
+          </div>
+          <h1 class="cn-chapter__title">分类学视角</h1>
+          <p class="cn-chapter__subtitle">从分类原则、分类方法及其背后的认知逻辑、权力结构和演化规律看事物</p>
+          <div class="cn-chapter__meta">
+            <span class="tag">分类</span>
+            <span class="tag">认知</span>
+            <span class="tag">演化</span>
+          </div>
+        </header>
 
-      <h2>从一次性回答到会后悔</h2>
-      <p>
-        我观察到一个有意思的现象:在工作中,我越来越倾向于让模型先给一个
-        粗糙的方案,然后再让它"挑刺"。这个流程听起来很傻 —— 你让一个 AI 否定另一个 AI,
-        最后不还是 AI 在自说自话?
-      </p>
-      <p>
-        但事实上,这种"自己否定自己"的机制,
-        模拟的正是人类在写第一稿之后的本能反应:你写完一段,心里总有个声音说"这里怪怪的"。
-        大语言模型没有本能,但它可以被训练出这个声音的代理。
-      </p>
+        <div class="cn-chapter__body">
+          <h2><span class="num">一</span>问题的提出</h2>
+          <p>
+            2023 年大家还在讨论"模型会不会胡说"的时候,问题就已经不是模型会不会思考了。
+            问题是:模型什么时候开始,我们就要开始担心它"想多了"。
+          </p>
+          <p>
+            这背后真正变化的是——我们对模型<strong>做什么</strong>这件事,开始有了一种"先分镜、再拍摄、最后剪辑"的工作流。
+            这个工作流,本质上就是一次<strong>分类</strong>的胜利。
+          </p>
 
-      <h2>它仍然不会"想"</h2>
-      <p>
-        我不想把这篇文章写得像"AI 已经有意识了"的标题党。它没有。
-        它在做的是<strong>高维度的模式匹配 + 显式的中间步骤</strong>,
-        后者让它看起来像在思考。
-      </p>
-      <p>
-        真正改变的不是模型的能力上限,而是它的<strong>行为</strong>:
-        之前它答非所问是常态,现在它"先想再答"是常态。
-        这个 shift,比参数多 1000 亿重要得多。
-      </p>
+          <h2><span class="num">二</span>分类学的传统</h2>
+          <p>
+            分类学(taxonomy)不是现代发明。它从亚里士多德开始,到林奈的二名法,再到当代的<strong>信息架构</strong>和<strong>本体工程</strong>——
+            人类一直在做一件事:把混乱的世界切成<em>边界清晰的格子</em>,然后在格子里放东西。
+          </p>
+          <p>
+            关键洞察:分类不是描述事物的秩序,<strong>而是规定事物的秩序</strong>。
+            每一次切分,都既是简化,也是遮蔽。
+          </p>
 
-      <h2>一个判断</h2>
-      <p>
-        我赌:从 2026 年开始,"思考型"和"非思考型"会变成模型的标准分类。
-        不再是"快模型 vs 大模型",而是"一次性模型 vs 反思模型"。
-        后者会吞掉前者的大部分场景,前者只会在延迟敏感的场景里活下来。
-      </p>
+          <h2><span class="num">三</span>从一次性回答到"分镜头"</h2>
+          <p>
+            早一代的 LLM 像一个非常博学但嘴比脑快的人 —— 你问什么它就答什么,
+            没有"等一下,让我看看这个问题的前提对不对"这一说。
+          </p>
+          <p>
+            现在不一样了。Chain-of-Thought、ReAct、Tree of Thoughts、Reflection、Self-Critique,
+            这些机制加起来,等于在模型内部装了一个<strong>小型舞台</strong>:它先把问题分镜,
+            然后在镜头上来回切换,有时候回头改分镜,有时候叫自己"再来一遍"。
+          </p>
+          <blockquote>
+            这不是"模型变聪明了",这是问题的形状变了 —— 它被切成了可分类、可处理、可反思的小段。
+          </blockquote>
 
-      <p>
-        至于这是不是好事 —— 再说。
-      </p>
-    </div>
+          <h2><span class="num">四</span>从一次性回答到"会后悔"</h2>
+          <p>
+            我观察到一个有意思的现象:在工作中,我越来越倾向于让模型先给一个
+            粗糙的方案,然后再让它"挑刺"。这个流程听起来很傻 —— 你让一个 AI 否定另一个 AI,
+            最后不还是 AI 在自说自话?
+          </p>
+          <p>
+            但事实上,这种"自己否定自己"的机制,
+            模拟的正是人类在写第一稿之后的本能反应:你写完一段,心里总有个声音说"这里怪怪的"。
+            大语言模型没有本能,但它可以被训练出<strong>这个声音的代理</strong>。
+          </p>
 
-    <footer class="article__footer">
-      <a href="../index.html">← 回到首页</a>
-      <a href="skill-economy.html">下一篇:Skill 的经济学 →</a>
-    </footer>
-  </article>
+          <h2><span class="num">五</span>它仍然不会"想"</h2>
+          <p>
+            我不想把这一章写得像"AI 已经有意识了"的标题党。它没有。
+            它在做的是<strong>高维度的模式匹配 + 显式的中间步骤</strong>,
+            后者让它看起来像在思考。
+          </p>
+          <p>
+            真正改变的不是模型的能力上限,而是它的<strong>行为</strong>:
+            之前它答非所问是常态,现在它"先想再答"是常态。
+            这个 shift,比参数多 1000 亿重要得多。
+          </p>
 
-  <footer class="footer">
+          <h2><span class="num">六</span>一个判断</h2>
+          <p>
+            我赌:从 2026 年开始,"思考型"和"非思考型"会变成模型的标准分类。
+            不再是"快模型 vs 大模型",而是"一次性模型 vs 反思模型"。
+            后者会吞掉前者的大部分场景,前者只会在延迟敏感的场景里活下来。
+          </p>
+          <p>
+            至于这是不是好事 —— 再说。
+          </p>
+
+          <hr>
+
+          <p style="font-family: 'STKaiti', 'KaiTi', 'Kaiti SC', '楷体', serif; color: var(--cn-ink-faint); text-align: center; font-size: 0.95rem; letter-spacing: 0.1em;">
+            —— 分类学视角 · 完 ——
+          </p>
+        </div>
+
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="../intro.html">
+            <span class="label">上一篇</span>
+            <span class="title">序言</span>
+          </a>
+          <a class="next" href="skill-economy.html">
+            <span class="label">下一篇</span>
+            <span class="title">二 · 经济学视角</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/pages/when-models-think.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
+        </div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
     <div class="container">
-      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
-        <div>© 2026 Zero · 一个非商业的个人记录</div>
-        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 丙午年 · jeekeagle · 一本非商业的小书
       </div>
     </div>
   </footer>
