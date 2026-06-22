@@ -3,110 +3,154 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>视角索引 · Zero-Perspective-Hub</title>
-  <meta name="description" content="Zero-Perspective-Hub 所有视角的索引 —— 按时间倒序排列。" />
+  <title>索引 · Zero-Perspective-Hub</title>
+  <meta name="description" content="所有视角的索引 —— 按编、按章、按时间倒序排列。" />
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style-cn.css" />
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="主导航">
-    <div class="navbar__inner">
-      <a class="navbar__brand" href="index.html">
+  <div class="cn-drawer-overlay"></div>
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <button class="cn-nav__drawer-toggle" type="button" aria-label="打开目录">☰</button>
+      <a class="cn-nav__brand" href="index.html">
         <img class="logo-mark" src="img/logo.svg" alt="视角" /><span class="logo-text">视角</span>
       </a>
-      <ul class="navbar__links">
+      <ul class="cn-nav__links">
         <li><a href="index.html">首页</a></li>
+        <li><a href="intro.html">序言</a></li>
+        <li><a href="index.html#perspectives">视角</a></li>
         <li><a href="about.html">关于</a></li>
-        <li><a href="archive.html" class="active">归档</a></li>
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
-      <div class="navbar__actions">
-        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      <div class="cn-nav__actions">
+        <span class="cn-nav__search"><button class="cn-search-trigger" type="button" aria-label="搜索" title="搜索 (Ctrl+K)">搜</button></span>
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>
   </nav>
 
-  <main class="archive">
-    <div class="article__header">
-      <div class="article__eyebrow">索引</div>
-      <h1 class="article__title">所有视角</h1>
-      <div class="article__meta">
-        <span>共 6 副镜片</span>
-        <span>·</span>
-        <span>按时间倒序</span>
-        <span>·</span>
-        <span><a href="feed.xml">RSS</a></span>
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="intro.html">序言</a></li>
+          <li><a href="about.html">关于</a></li>
+        </ul>
       </div>
-    </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="pages/when-models-think.html">一 · 分类学视角</a></li>
+          <li><a href="pages/skill-economy.html">二 · 经济学视角</a></li>
+          <li><a href="pages/prompt-as-program.html">三 · 程序视角</a></li>
+          <li><a href="pages/agent-topology.html">四 · 拓扑学视角</a></li>
+          <li><a href="pages/from-tool-to-colleague.html">五 · 关系视角</a></li>
+          <li><a href="pages/notes-on-rag.html">六 · 架构视角</a></li>
+        </ul>
+      </div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="archive.html" class="active">索引</a></li>
+        </ul>
+      </div>
+    </aside>
 
-    <h2 class="archive__year">2026</h2>
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">索引</span>
+      </nav>
 
-    <a class="archive__item" href="pages/when-models-think.html">
-      <span class="archive__date">2026-06-15</span>
-      <span class="archive__title">当模型开始"思考"</span>
-      <span class="archive__tag">LLM</span>
-    </a>
-    <a class="archive__item" href="pages/skill-economy.html">
-      <span class="archive__date">2026-05-28</span>
-      <span class="archive__title">Skill 的经济学</span>
-      <span class="archive__tag">Skill</span>
-    </a>
-    <a class="archive__item" href="pages/prompt-as-program.html">
-      <span class="archive__date">2026-05-10</span>
-      <span class="archive__title">提示词是新的编程语言</span>
-      <span class="archive__tag">Prompt</span>
-    </a>
-    <a class="archive__item" href="pages/agent-topology.html">
-      <span class="archive__date">2026-04-22</span>
-      <span class="archive__title">Agent 协作的拓扑学</span>
-      <span class="archive__tag">Agent</span>
-    </a>
-    <a class="archive__item" href="pages/from-tool-to-colleague.html">
-      <span class="archive__date">2026-04-03</span>
-      <span class="archive__title">从工具到同事</span>
-      <span class="archive__tag">HCI</span>
-    </a>
-    <a class="archive__item" href="pages/notes-on-rag.html">
-      <span class="archive__date">2026-03-18</span>
-      <span class="archive__title">RAG 不是银弹,但它改变了什么</span>
-      <span class="archive__tag">RAG</span>
-    </a>
-
-    <p style="margin-top: 3rem; text-align: center; color: var(--text-faint); font-size: 0.9rem;">
-      镜片收录至 2026.06 · 持续增添中
-    </p>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__col">
-          <div class="footer__brand">
-            <img class="logo-mark" src="img/logo.svg" alt="" />
-            视角
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">录</span>
+            <span class="cn-chapter-meta__vol">附录 · 索引</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>共 6 副镜片</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span><a href="feed.xml">RSS</a></span>
           </div>
-          <p class="footer__tagline">一个关于视角的小型研究中心 —— 收集镜片、整理方法、检验用法。不求唯一答案,只求"还能怎么看"。</p>
-        </div>
-        <div class="footer__col">
-          <h4>浏览</h4>
+          <h1 class="cn-chapter__title">所有视角</h1>
+          <p class="cn-chapter__subtitle">按时间倒序 · 可按章、按时间两种顺序浏览</p>
+        </header>
+
+        <div class="cn-prose">
+          <h2>按时间(最新在前)</h2>
+          <div style="margin-bottom: 1.5rem;">
+            <a class="archive-row" href="pages/when-models-think.html">
+              <span class="archive-date">2026.06.15</span>
+              <span class="archive-title">一 · 分类学视角</span>
+              <span class="archive-tag">LLM</span>
+            </a>
+            <a class="archive-row" href="pages/skill-economy.html">
+              <span class="archive-date">2026.05.28</span>
+              <span class="archive-title">二 · 经济学视角</span>
+              <span class="archive-tag">Skill</span>
+            </a>
+            <a class="archive-row" href="pages/prompt-as-program.html">
+              <span class="archive-date">2026.05.10</span>
+              <span class="archive-title">三 · 程序视角</span>
+              <span class="archive-tag">Prompt</span>
+            </a>
+            <a class="archive-row" href="pages/agent-topology.html">
+              <span class="archive-date">2026.04.22</span>
+              <span class="archive-title">四 · 拓扑学视角</span>
+              <span class="archive-tag">Agent</span>
+            </a>
+            <a class="archive-row" href="pages/from-tool-to-colleague.html">
+              <span class="archive-date">2026.04.03</span>
+              <span class="archive-title">五 · 关系视角</span>
+              <span class="archive-tag">HCI</span>
+            </a>
+            <a class="archive-row" href="pages/notes-on-rag.html">
+              <span class="archive-date">2026.03.18</span>
+              <span class="archive-title">六 · 架构视角</span>
+              <span class="archive-tag">RAG</span>
+            </a>
+          </div>
+
+          <h2>按编章</h2>
+          <p>已收录视角按"第一编 · 视角"组织,共六章。可在左侧目录或上方章节页中浏览。</p>
+
+          <h2>统计</h2>
           <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="archive.html">归档</a></li>
-            <li><a href="about.html">关于</a></li>
+            <li><strong>镜片数</strong>:6</li>
+            <li><strong>最后更新</strong>:2026.06</li>
+            <li><strong>在写</strong>:第二编 · 方法(锻造法 / 检验法),待发</li>
           </ul>
         </div>
-        <div class="footer__col">
-          <h4>更多</h4>
-          <ul>
-            <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a></li>
-            <li><a href="feed.xml">RSS 订阅</a></li>
-          </ul>
+
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="about.html">
+            <span class="label">上一篇</span>
+            <span class="title">关于</span>
+          </a>
+          <a class="next" href="https://github.com/jeekeagle/zero-perspective-hub">
+            <span class="label">GitHub</span>
+            <span class="title">仓库 ↗</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/archive.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
         </div>
-      </div>
-      <div class="footer__bottom">
-        <div>© 2026 Zero · 一个非商业的个人记录</div>
-        <div>Built with plain HTML, CSS &amp; a bit of JS</div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
+    <div class="container">
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 2026 · jeekeagle · 一本非商业的小书
       </div>
     </div>
   </footer>

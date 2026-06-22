@@ -10,9 +10,11 @@
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
+  <div class="cn-drawer-overlay"></div>
   <!-- 导航 -->
   <nav class="cn-nav" aria-label="主导航">
     <div class="container cn-nav__inner">
+      <button class="cn-nav__drawer-toggle" type="button" aria-label="打开目录">☰</button>
       <a class="cn-nav__brand" href="index.html">
         <img class="logo-mark" src="img/logo.svg" alt="视角" /><span class="logo-text">视角</span>
       </a>
@@ -24,6 +26,7 @@
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
       <div class="cn-nav__actions">
+        <span class="cn-nav__search"><button class="cn-search-trigger" type="button" aria-label="搜索" title="搜索 (Ctrl+K)">搜</button></span>
         <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>

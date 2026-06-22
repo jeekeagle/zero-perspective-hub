@@ -4,17 +4,59 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zero-Perspective-Hub · 视角研究中心</title>
-  <meta name="description" content="一套用于看清世界的视角与方法 —— 一本关于"镜片"的小书。" />
+  <meta name="description" content="一套用于看清世界的视角与方法 —— 一本关于镜片的小书。" />
+  <meta name="keywords" content="视角,认知,框架,Agent,LXGW WenKai,新中式" />
+  <meta name="author" content="jeekeagle" />
+  <meta name="theme-color" content="#a8321d" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
   <meta property="og:title" content="Zero-Perspective-Hub · 视角研究中心" />
   <meta property="og:description" content="一套用于看清世界的视角与方法 —— 一本关于镜片的小书。" />
+  <meta property="og:url" content="https://jeekeagle.github.io/zero-perspective-hub/" />
+  <meta property="og:site_name" content="Zero-Perspective-Hub" />
+  <meta property="og:image" content="https://jeekeagle.github.io/zero-perspective-hub/img/logo.svg" />
+  <meta property="og:locale" content="zh_CN" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Zero-Perspective-Hub · 视角研究中心" />
+  <meta name="twitter:description" content="一套用于看清世界的视角与方法 —— 一本关于镜片的小书。" />
+
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="canonical" href="https://jeekeagle.github.io/zero-perspective-hub/" />
+  <link rel="alternate" type="application/rss+xml" title="Zero-Perspective-Hub" href="feed.xml" />
+
   <link rel="stylesheet" href="assets/css/style-cn.css" />
   <script src="assets/js/main.js" defer></script>
+
+  <!-- Schema.org 结构化数据 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Zero-Perspective-Hub",
+    "alternateName": "视角研究中心",
+    "description": "一套用于看清世界的视角与方法 —— 一本关于镜片的小书。",
+    "url": "https://jeekeagle.github.io/zero-perspective-hub/",
+    "inLanguage": "zh-CN",
+    "author": {
+      "@type": "Person",
+      "name": "jeekeagle"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "jeekeagle"
+    }
+  }
+  </script>
 </head>
 <body>
+  <div class="cn-drawer-overlay"></div>
   <!-- 导航 -->
   <nav class="cn-nav" aria-label="主导航">
     <div class="container cn-nav__inner">
+      <button class="cn-nav__drawer-toggle" type="button" aria-label="打开目录">☰</button>
       <a class="cn-nav__brand" href="index.html">
         <img class="logo-mark" src="img/logo.svg" alt="视角" /><span class="logo-text">视角</span>
       </a>
@@ -27,6 +69,7 @@
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
       <div class="cn-nav__actions">
+        <span class="cn-nav__search"><button class="cn-search-trigger" type="button" aria-label="搜索" title="搜索 (Ctrl+K)">搜</button></span>
         <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>

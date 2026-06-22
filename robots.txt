@@ -1,0 +1,14 @@
+# Zero-Perspective-Hub · robots.txt
+# https://jeekeagle.github.io/zero-perspective-hub/
+
+User-agent: *
+Allow: /
+
+# 站内搜索索引(虽然很短,但告诉爬虫可以抓)
+Allow: /search-index.json
+
+# 不需要索引的资源
+Disallow: /assets/fonts/
+
+# Sitemap
+Sitemap: https://jeekeagle.github.io/zero-perspective-hub/sitemap.xml

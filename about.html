@@ -6,145 +6,171 @@
   <title>关于 · Zero-Perspective-Hub</title>
   <meta name="description" content="关于 Zero-Perspective-Hub 这个博客的来历、写作原则与未来计划。" />
   <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/style-cn.css" />
   <script src="assets/js/main.js" defer></script>
 </head>
 <body>
-  <nav class="navbar" aria-label="主导航">
-    <div class="navbar__inner">
-      <a class="navbar__brand" href="index.html">
+  <div class="cn-drawer-overlay"></div>
+  <nav class="cn-nav" aria-label="主导航">
+    <div class="container cn-nav__inner">
+      <button class="cn-nav__drawer-toggle" type="button" aria-label="打开目录">☰</button>
+      <a class="cn-nav__brand" href="index.html">
         <img class="logo-mark" src="img/logo.svg" alt="视角" /><span class="logo-text">视角</span>
       </a>
-      <ul class="navbar__links">
+      <ul class="cn-nav__links">
         <li><a href="index.html">首页</a></li>
+        <li><a href="intro.html">序言</a></li>
+        <li><a href="index.html#perspectives">视角</a></li>
         <li><a href="about.html" class="active">关于</a></li>
-        <li><a href="archive.html">归档</a></li>
         <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
       </ul>
-      <div class="navbar__actions">
-        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      <div class="cn-nav__actions">
+        <span class="cn-nav__search"><button class="cn-search-trigger" type="button" aria-label="搜索" title="搜索 (Ctrl+K)">搜</button></span>
+        <button id="cnThemeToggle" class="cn-icon" type="button" aria-label="切换墨韵/宣纸" title="切换墨韵/宣纸">墨</button>
       </div>
     </div>
   </nav>
 
-  <article class="about">
-    <div class="article__header">
-      <div class="article__eyebrow">关于</div>
-      <h1 class="article__title">为什么有「视角」</h1>
-      <div class="article__meta">
-        <span>最后更新 2026.06</span>
-        <span>·</span>
-        <span>约 4 分钟读完</span>
+  <div class="cn-book">
+    <aside class="cn-toc" aria-label="目录">
+      <div class="cn-toc__title">本书目录</div>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">序章</div>
+        <ul class="cn-toc__list">
+          <li><a href="intro.html">序言</a></li>
+          <li><a href="about.html" class="active">关于</a></li>
+        </ul>
       </div>
-    </div>
-
-    <p class="about__lede">
-      Zero-Perspective-Hub 是一个小型的"视角研究中心"——
-      这里陈列的不是答案,而是<strong>看问题的方法</strong>。
-    </p>
-
-    <p>
-      起这个名字是因为我越来越觉得:
-      世界不缺乏观点,缺乏的是<strong>看观点的视角</strong>。
-      一个人能戴几副眼镜,决定了他能看到几层世界。
-    </p>
-
-    <h2 style="margin-top: 2.5rem;">这里收什么</h2>
-
-    <p>
-      三类东西,大致按这个顺序:
-    </p>
-
-    <ul>
-      <li><strong>镜片 (Lens)</strong> —— 一个具体的视角,比如"分类学视角""演化视角""博弈视角"。它有自己的前提、自己的盲区、自己擅长看的对象。</li>
-      <li><strong>锻造法 (Method)</strong> —— 这种视角是怎么造出来的。从什么经验、什么案例、什么对比里抽象出来的。它让一个视角不再神秘。</li>
-      <li><strong>检验录 (Test)</strong> —— 拿这个视角去看某个具体问题,看到了什么,漏掉了什么。视角可不可用,要在这里见真章。</li>
-    </ul>
-
-    <h2 style="margin-top: 2.5rem;">几个原则</h2>
-
-    <div class="about__principles">
-      <div class="about__principle">
-        <h3>1. 不追求客观,只追求真实</h3>
-        <p>我写"我戴这副眼镜看到什么",不写"事实是"。同一个对象,不同眼镜下不一样 —— 这是视角的本质,不是缺陷。</p>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">第一编 · 视角</div>
+        <ul class="cn-toc__list">
+          <li><a href="pages/when-models-think.html">一 · 分类学视角</a></li>
+          <li><a href="pages/skill-economy.html">二 · 经济学视角</a></li>
+          <li><a href="pages/prompt-as-program.html">三 · 程序视角</a></li>
+          <li><a href="pages/agent-topology.html">四 · 拓扑学视角</a></li>
+          <li><a href="pages/from-tool-to-colleague.html">五 · 关系视角</a></li>
+          <li><a href="pages/notes-on-rag.html">六 · 架构视角</a></li>
+        </ul>
       </div>
-      <div class="about__principle">
-        <h3>2. 带时间戳</h3>
-        <p>每篇都有日期。视角有保质期,环境一变它就失效。我宁可日后被打脸,也不要装作一贯正确。</p>
+      <div class="cn-toc__group">
+        <div class="cn-toc__group-label">附录</div>
+        <ul class="cn-toc__list">
+          <li><a href="archive.html">索引</a></li>
+        </ul>
       </div>
-      <div class="about__principle">
-        <h3>3. 不做导购</h3>
-        <p>这里不会有"必戴的 10 副眼镜"。如果有,我也想先问一句"你看到的到底是什么,需要换眼镜吗?"</p>
-      </div>
-      <div class="about__principle">
-        <h3>4. 元视角也写</h3>
-        <p>关于"视角本身"的视角,在这里也会写。比如:什么时候该换眼镜?一副好眼镜的标准是什么?视角会不会欺骗我?</p>
-      </div>
-      <div class="about__principle">
-        <h3>5. 没有评论、没有订阅、没有广告</h3>
-        <p>这个站不靠流量活着。RSS 是给愿意订阅的人留的,其余的请自便。</p>
-      </div>
-    </div>
+    </aside>
 
-    <h2 style="margin-top: 2.5rem;">它不是什么</h2>
-    <p>
-      不是一本《百种视角大全》(系统性的东西会被快速打脸),
-      不是一个教程站(我写的时候读者是未来的我自己,不是小白),
-      也不是一个 newsletter(我受不了每周交稿的压力)。
-    </p>
+    <main class="cn-book__main">
+      <nav class="cn-breadcrumb" aria-label="面包屑">
+        <a href="index.html">首页</a>
+        <span class="cn-breadcrumb__sep">/</span>
+        <span class="cn-breadcrumb__current">关于</span>
+      </nav>
 
-    <p>
-      它更像你写代码时随手开的一个 <code>lenses.md</code> ，
-      只不过这个 lenses 在 GitHub Pages 上,谁都能戴上、取下、再换一副。
-    </p>
-
-    <h2 style="margin-top: 2.5rem;">以后会怎样</h2>
-    <p>
-      不知道。这个站点本身就是一种实验:
-      在信息洪流里,陈列视角而非答案,这件事还能不能被人找到、还有没有价值。
-      我的赌注是:有,但要慢、要真、要少。
-    </p>
-
-    <p>
-      如果你也想整理自己的视角,无论公开不公开,我都建议开一个这样的站。
-      不是为了涨粉,是为了让明天的自己,能回看到今天戴过哪几副眼镜。
-    </p>
-
-    <div class="article__footer">
-      <a href="index.html">← 回到首页</a>
-      <a href="archive.html">看归档 →</a>
-    </div>
-  </article>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__col">
-          <div class="footer__brand">
-            <img class="logo-mark" src="img/logo.svg" alt="" />
-            视角
+      <article>
+        <header>
+          <div class="cn-chapter-meta">
+            <span class="cn-chapter-meta__seal">关</span>
+            <span class="cn-chapter-meta__vol">序章 · 关于</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>最后更新 2026.06</span>
+            <span class="cn-chapter-meta__sep">·</span>
+            <span>约 4 分钟读完</span>
           </div>
-          <p class="footer__tagline">一个关于视角的小型研究中心 —— 收集镜片、整理方法、检验用法。不求唯一答案,只求"还能怎么看"。</p>
-        </div>
-        <div class="footer__col">
-          <h4>浏览</h4>
+          <h1 class="cn-chapter__title">为什么有「视角」</h1>
+          <p class="cn-chapter__subtitle">关于本书的缘起、原则与未来</p>
+        </header>
+
+        <div class="cn-prose">
+          <p>
+            Zero-Perspective-Hub 是一个小型的"视角研究中心"——
+            这里陈列的不是答案,而是<strong>看问题的方法</strong>。
+          </p>
+
+          <p>
+            起这个名字是因为我越来越觉得:
+            世界不缺乏观点,缺乏的是<strong>看观点的视角</strong>。
+            一个人能戴几副眼镜,决定了他能看到几层世界。
+          </p>
+
+          <h2>这里收什么</h2>
+          <p>三类东西,大致按这个顺序:</p>
           <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="archive.html">归档</a></li>
-            <li><a href="about.html">关于</a></li>
+            <li><strong>镜片 (Lens)</strong> —— 一个具体的视角,比如"分类学视角""演化视角""博弈视角"。它有自己的前提、自己的盲区、自己擅长看的对象。</li>
+            <li><strong>锻造法 (Method)</strong> —— 这种视角是怎么造出来的。从什么经验、什么案例、什么对比里抽象出来的。它让一个视角不再神秘。</li>
+            <li><strong>检验录 (Test)</strong> —— 拿这个视角去看某个具体问题,看到了什么,漏掉了什么。视角可不可用,要在这里见真章。</li>
           </ul>
+
+          <h2>几个原则</h2>
+          <p>在读这本书之前,先告诉你我会怎么写、不会怎么写 —— 这样你读的时候心里有数:</p>
+          <p>
+            <strong>不追求客观,只追求真实</strong>。<br>
+            我写"我戴这副眼镜看到什么",不写"事实是"。同一个对象,不同眼镜下不一样 —— 这是视角的本质,不是缺陷。
+          </p>
+          <p>
+            <strong>带时间戳</strong>。<br>
+            每篇都有日期。视角有保质期,环境一变它就失效。我宁可日后被打脸,也不要装作一贯正确。
+          </p>
+          <p>
+            <strong>不做导购</strong>。<br>
+            这里不会有"必戴的 10 副眼镜"。如果有,我也想先问一句"你看到的到底是什么,需要换眼镜吗?"
+          </p>
+          <p>
+            <strong>元视角也写</strong>。<br>
+            关于"视角本身"的视角,在这里也会写。比如:什么时候该换眼镜?一副好眼镜的标准是什么?视角会不会欺骗我?
+          </p>
+          <p>
+            <strong>没有评论、没有订阅、没有广告</strong>。<br>
+            这个站不靠流量活着。RSS 是给愿意订阅的人留的,其余的请自便。
+          </p>
+
+          <h2>它不是什么</h2>
+          <p>
+            不是一本《百种视角大全》(系统性的东西会被快速打脸),
+            不是一个教程站(我写的时候读者是未来的我自己,不是小白),
+            也不是一个 newsletter(我受不了每周交稿的压力)。
+          </p>
+          <p>
+            它更像你写代码时随手开的一个 <code>lenses.md</code> ，
+            只不过这个 lenses 在 GitHub Pages 上,谁都能戴上、取下、再换一副。
+          </p>
+
+          <h2>以后会怎样</h2>
+          <p>
+            不知道。这个站点本身就是一种实验:
+            在信息洪流里,陈列视角而非答案,这件事还能不能被人找到、还有没有价值。
+            我的赌注是:有,但要慢、要真、要少。
+          </p>
+          <p>
+            如果你也想整理自己的视角,无论公开不公开,我都建议开一个这样的站。
+            不是为了涨粉,是为了让明天的自己,能回看到今天戴过哪几副眼镜。
+          </p>
         </div>
-        <div class="footer__col">
-          <h4>更多</h4>
-          <ul>
-            <li><a href="https://github.com/jeekeagle/zero-perspective-hub" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a></li>
-            <li><a href="feed.xml">RSS 订阅</a></li>
-          </ul>
+
+        <nav class="cn-chapter-nav">
+          <a class="prev" href="intro.html">
+            <span class="label">上一篇</span>
+            <span class="title">序言</span>
+          </a>
+          <a class="next" href="archive.html">
+            <span class="label">下一篇</span>
+            <span class="title">索引</span>
+          </a>
+        </nav>
+
+        <div class="cn-chapter-edit">
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/edit/main/about.html">编辑此页</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub/issues/new">报告问题</a>
+          <a href="https://github.com/jeekeagle/zero-perspective-hub">查看源码</a>
         </div>
-      </div>
-      <div class="footer__bottom">
-        <div>© 2026 Zero · 一个非商业的个人记录</div>
-        <div>Built with plain HTML, CSS &amp; a bit of JS</div>
+      </article>
+    </main>
+  </div>
+
+  <footer class="cn-footer">
+    <div class="container">
+      <div class="cn-footer__bottom" style="border-top: none; padding-top: 0; text-align: center;">
+        © 2026 · jeekeagle · 一本非商业的小书
       </div>
     </div>
   </footer>
