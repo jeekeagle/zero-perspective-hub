@@ -199,22 +199,22 @@ code {
 }
 .cn-nav__brand:hover { color: var(--cn-ink); }
 .cn-nav__brand .logo-mark {
-  width: 28px;
-  height: 28px;
+  width: 22px;
+  height: 22px;
   color: var(--cn-vermilion);
   flex-shrink: 0;
   transition: color 0.2s ease, transform 0.3s ease;
 }
 .cn-nav__brand:hover .logo-mark {
   color: var(--cn-gold);
-  transform: rotate(-8deg);
+  transform: rotate(-6deg);
 }
 .cn-nav__brand .logo-text {
   font-family: var(--cn-font-kai);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
-  text-indent: 0.2em;
+  letter-spacing: 0.18em;
+  white-space: nowrap;
 }
 
 .cn-nav__links {
@@ -578,12 +578,12 @@ code {
   pointer-events: none;
 }
 
-/* 新:页脚放大镜 logo */
+/* 新:页脚山月 logo */
 .cn-footer__logo {
-  width: 56px;
-  height: 56px;
+  width: 40px;
+  height: 40px;
   color: var(--cn-vermilion);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
   display: block;
   margin-left: auto;
   margin-right: auto;
