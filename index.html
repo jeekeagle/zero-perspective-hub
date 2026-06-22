@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zero-Perspective-Hub · 视角研究中心</title>
+  <meta name="description" content="一个关于视角的小型研究中心 —— 收集镜片、整理方法、检验用法。" />
+  <meta property="og:title" content="Zero-Perspective-Hub · 视角研究中心" />
+  <meta property="og:description" content="一个关于视角的小型研究中心 —— 收集镜片、整理方法、检验用法。" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <!-- 导航 -->
+  <nav class="navbar" aria-label="主导航">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="index.html">
+        <img src="img/logo.svg" alt="Zero-Perspective-Hub" />
+        <b>Zero-Perspective-Hub</b>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="index.html" class="active">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="archive.html">归档</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="hero__decor" aria-hidden="true">
+      <!-- 左:六边形 -->
+      <svg class="hero__decor-left" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" stroke-width="1" stroke-linejoin="round" stroke-linecap="round">
+          <path d="M100 20 L160 55 L160 125 L100 160 L40 125 L40 55 Z"/>
+          <path d="M100 40 L142 64 L142 116 L100 140 L58 116 L58 64 Z" opacity="0.5"/>
+          <circle cx="100" cy="20" r="3" fill="currentColor"/>
+          <circle cx="160" cy="55" r="3" fill="currentColor"/>
+          <circle cx="160" cy="125" r="3" fill="currentColor"/>
+          <circle cx="100" cy="160" r="3" fill="currentColor"/>
+          <circle cx="40" cy="125" r="3" fill="currentColor"/>
+          <circle cx="40" cy="55" r="3" fill="currentColor"/>
+          <circle cx="100" cy="90" r="4" fill="currentColor"/>
+          <line x1="100" y1="20" x2="100" y2="86"/>
+          <line x1="160" y1="55" x2="104" y2="90"/>
+          <line x1="160" y1="125" x2="104" y2="90"/>
+          <line x1="40" y1="55" x2="96" y2="90"/>
+          <line x1="40" y1="125" x2="96" y2="90"/>
+          <line x1="100" y1="94" x2="100" y2="160"/>
+        </g>
+      </svg>
+      <!-- 右:网络图 -->
+      <svg class="hero__decor-right" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g stroke="currentColor" stroke-width="1" stroke-linecap="round">
+          <line x1="40" y1="40" x2="110" y2="30" opacity="0.5"/>
+          <line x1="110" y1="30" x2="180" y2="60" opacity="0.5"/>
+          <line x1="40" y1="40" x2="80" y2="110" opacity="0.5"/>
+          <line x1="80" y1="110" x2="110" y2="30" opacity="0.5"/>
+          <line x1="80" y1="110" x2="180" y2="60" opacity="0.5"/>
+          <line x1="80" y1="110" x2="150" y2="160" opacity="0.5"/>
+          <line x1="150" y1="160" x2="180" y2="60" opacity="0.5"/>
+          <line x1="40" y1="40" x2="50" y2="170" opacity="0.5"/>
+          <line x1="50" y1="170" x2="80" y2="110" opacity="0.5"/>
+          <line x1="50" y1="170" x2="150" y2="160" opacity="0.5"/>
+        </g>
+        <g fill="currentColor">
+          <circle cx="40" cy="40" r="3.5"/>
+          <circle cx="110" cy="30" r="4"/>
+          <circle cx="180" cy="60" r="3"/>
+          <circle cx="80" cy="110" r="4.5"/>
+          <circle cx="150" cy="160" r="3.5"/>
+          <circle cx="50" cy="170" r="3"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="hero__inner">
+      <div class="eyebrow">Zero · Perspective · Methodology</div>
+      <h1 class="hero__title">视角研究中心</h1>
+      <p class="hero__subtitle">一套用于看清世界的视角与方法</p>
+      <p class="hero__lead">
+        每个 Perspective 是一副镜片 —— 戴上它,你看到的世界就不一样了。
+        这里收集各种视角:分类的、系统的、演化的、博弈的、组织的。
+        不追求唯一答案,只追求"还能怎么看"。
+      </p>
+      <div class="cta-row">
+        <a class="cta cta--primary" href="#latest">从最近收录开始 →</a>
+        <a class="cta cta--secondary" href="about.html">什么是研究中心</a>
+      </div>
+      <div class="style-switcher">当前:样式 1(现代科技) · <a href="style-2.html">试试样式 2 新中式美学 →</a></div>
+    </div>
+    <div class="hero__fade"></div>
+  </header>
+
+  <!-- 最近收录的视角 -->
+  <main>
+    <section id="latest">
+      <div class="container">
+        <h2 class="section-title">最近收录的视角</h2>
+        <p class="section-lead">按时间倒序 —— 越近的越能反映当前状态,越早的越能看到观点如何演化。</p>
+        <div class="grid">
+          <a class="card" href="pages/when-models-think.html">
+            <div class="card__eyebrow">观察 · 模型</div>
+            <h3 class="card__title">当模型开始"思考"</h3>
+            <p class="card__desc">从一次性回答到多步推理,LLM 正在悄悄变成另一种东西 —— 不是更聪明的搜索框,而是会分镜头的同事。</p>
+            <div class="card__meta">
+              <time>2026-06-15</time>
+              <span class="card__tag">LLM</span>
+            </div>
+          </a>
+
+          <a class="card" href="pages/skill-economy.html">
+            <div class="card__eyebrow">观察 · 工具</div>
+            <h3 class="card__title">Skill 的经济学</h3>
+            <p class="card__desc">当提示词开始可被交易、可被复用、可被打包 —— 一种新的"微技能市场"正在 prompt 层生长。</p>
+            <div class="card__meta">
+              <time>2026-05-28</time>
+              <span class="card__tag">Skill</span>
+            </div>
+          </a>
+
+          <a class="card" href="pages/prompt-as-program.html">
+            <div class="card__eyebrow">笔记 · 编程</div>
+            <h3 class="card__title">提示词是新的编程语言</h3>
+            <p class="card__desc">自然语言正在获得类型系统、模块化与版本管理 —— 但和传统编程不同,它的"编译"是发生在模型权重里的。</p>
+            <div class="card__meta">
+              <time>2026-05-10</time>
+              <span class="card__tag">Prompt</span>
+            </div>
+          </a>
+
+          <a class="card" href="pages/agent-topology.html">
+            <div class="card__eyebrow">观察 · 协作</div>
+            <h3 class="card__title">Agent 协作的拓扑学</h3>
+            <p class="card__desc">单体 Agent 不够用之后,我们开始画图 —— 串行、并行、投票、监督。每种拓扑都对应一种组织哲学。</p>
+            <div class="card__meta">
+              <time>2026-04-22</time>
+              <span class="card__tag">Agent</span>
+            </div>
+          </a>
+
+          <a class="card" href="pages/from-tool-to-colleague.html">
+            <div class="card__eyebrow">观察 · 人机</div>
+            <h3 class="card__title">从工具到同事</h3>
+            <p class="card__desc">关系变了。你不再告诉电脑"做什么",而是在和它讨论"该不该做"。这个转变,比模型本身重要得多。</p>
+            <div class="card__meta">
+              <time>2026-04-03</time>
+              <span class="card__tag">HCI</span>
+            </div>
+          </a>
+
+          <a class="card" href="pages/notes-on-rag.html">
+            <div class="card__eyebrow">笔记 · 架构</div>
+            <h3 class="card__title">RAG 不是银弹,但它改变了什么</h3>
+            <p class="card__desc">检索增强被吹成万能解药,被骂成临时补丁。两种说法都有道理 —— 关键看你怎么用上下文窗口。</p>
+            <div class="card__meta">
+              <time>2026-03-18</time>
+              <span class="card__tag">RAG</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 视角分类 -->
+    <section>
+      <div class="container">
+        <h2 class="section-title">视角分类</h2>
+        <p class="section-lead">收录的视角大致落在三类 —— 它们彼此交叉,但出发点不同。</p>
+        <div class="grid">
+          <div class="card" style="cursor: default;">
+            <div class="card__eyebrow">观察 · Lens</div>
+            <h3 class="card__title">从某副镜片看到的现象</h3>
+            <p class="card__desc">带上一副特定的视角(分类的、演化的、博弈的、组织的),去看一个具体现象。把"看到什么"和"用什么看到"分开放。</p>
+            <div class="card__meta">
+              <span class="card__tag">7 篇</span>
+              <span class="card__tag">每月 2-3 篇</span>
+            </div>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div class="card__eyebrow">方法 · Method</div>
+            <h3 class="card__title">怎么把这副镜片造出来</h3>
+            <p class="card__desc">视角不是天降的。它从经验、案例、对比中来。这里记我怎么从一堆素材里提炼出可复用的视角。</p>
+            <div class="card__meta">
+              <span class="card__tag">5 篇</span>
+              <span class="card__tag">不定期</span>
+            </div>
+          </div>
+          <div class="card" style="cursor: default;">
+            <div class="card__eyebrow">检验 · Test</div>
+            <h3 class="card__title">戴着它去看,看到了什么</h3>
+            <p class="card__desc">视角可不可用,要拿具体问题去试。这里记我用某个视角分析某个案例时,它帮我看到了什么、漏掉了什么。</p>
+            <div class="card__meta">
+              <span class="card__tag">4 篇</span>
+              <span class="card__tag">月度</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 引言 -->
+    <section class="quotes">
+      <div class="container">
+        <blockquote class="quote">
+          <p>"同一个问题,戴上不同的眼镜,会看到不同的答案。<br>视角的价值,不是让你看到更多,而是让你知道 —— 你看到的只是其中一种。"</p>
+          <cite>—— Zero-Perspective-Hub · 开篇</cite>
+        </blockquote>
+        <blockquote class="quote">
+          <p>"分类不是描述事物的秩序,而是规定事物的秩序。每一次切分,都既是简化,也是遮蔽。"</p>
+          <cite>—— 分类学视角 / 第一步 · 识别分类对象</cite>
+        </blockquote>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__col">
+          <div class="footer__brand">
+            <img src="img/logo.svg" alt="" />
+            Zero-Perspective-Hub
+          </div>
+          <p class="footer__tagline">一个关于视角的小型研究中心 —— 收集镜片、整理方法、检验用法。不求唯一答案,只求"还能怎么看"。</p>
+        </div>
+        <div class="footer__col">
+          <h4>浏览</h4>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="archive.html">归档</a></li>
+            <li><a href="about.html">关于</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>更多</h4>
+          <ul>
+            <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub 仓库 ↗</a></li>
+            <li><a href="feed.xml">RSS 订阅</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div>© 2026 Zero · 一个非商业的个人记录</div>
+        <div>Built with plain HTML, CSS &amp; a bit of JS</div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agent 协作的拓扑学 · 视角研究中心</title>
+  <meta name="description" content="单体 Agent 不够用之后,我们开始画图 —— 串行、并行、投票、监督。每种拓扑都对应一种组织哲学。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="navbar" aria-label="主导航">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="../index.html">
+        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
+        <b>Zero-Perspective-Hub</b>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../archive.html">归档</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <header class="article__header">
+      <div class="article__eyebrow">观察 · 协作</div>
+      <h1 class="article__title">Agent 协作的拓扑学</h1>
+      <div class="article__meta">
+        <time>2026-04-22</time>
+        <span>·</span>
+        <span>约 5 分钟读完</span>
+        <span>·</span>
+        <span class="card__tag">Agent</span>
+      </div>
+    </header>
+
+    <div class="article__body">
+      <p>
+        2024 年,大家还在比谁的单体 Agent 更强。
+        2025 年,所有人都在画图。
+      </p>
+
+      <h2>三种基本拓扑</h2>
+
+      <h3>1. 串行(流水线)</h3>
+      <p>
+        A → B → C → D。每个 Agent 干一件事,把结果丢给下一个。
+        像工厂流水线,效率高,但一个卡住全卡住。
+      </p>
+      <p>
+        <strong>适用</strong>:流程清晰、步骤可拆的任务 —— 写代码、生成报告、做多轮审核。
+      </p>
+
+      <h3>2. 并行(投票 / 竞争)</h3>
+      <p>
+        同一个任务给 N 个 Agent 同时做,然后选最好的,或者让它们互相打分。
+        像陪审团,质量高,但费钱。
+      </p>
+      <p>
+        <strong>适用</strong>:质量比成本重要的场景 —— 关键决策、复杂推理、需要多种视角的问题。
+      </p>
+
+      <h3>3. 监督(分层)</h3>
+      <p>
+        一个"老板 Agent"指挥一群"员工 Agent",老板负责拆任务、检查结果、决定重做。
+        像公司,灵活但需要好的老板。
+      </p>
+      <p>
+        <strong>适用</strong>:复杂、开放、目标不明确的任务 —— 科研、长期项目、用户陪伴。
+      </p>
+
+      <h2>实际系统是混合的</h2>
+      <p>
+        真实生产里几乎没有人只用一种拓扑。
+        我自己跑过的几个项目,大致是:
+      </p>
+
+      <pre><code>用户输入
+  └─ 监督层(老板 Agent)
+      ├─ 串行子流 1(规划 → 搜索 → 整理)
+      ├─ 并行子流 2(三个审稿人投票)
+      └─ 监督层回收 → 输出</code></pre>
+
+      <p>
+        也就是说,我们其实在<strong>画组织架构图</strong>。
+        老板在分活、员工在执行、HR 在做 review —— 全套人类组织语言都搬过来了。
+      </p>
+
+      <h2>一个有意思的观察</h2>
+      <p>
+        我做了一些小规模实验,发现:
+      </p>
+      <blockquote>
+        选哪种拓扑,和任务的<strong>模糊度</strong>高度相关。
+        越模糊的任务,越需要监督层;越清晰的任务,越应该串行。
+        并行适合<strong>关键路径</strong>,不适合日常。
+      </blockquote>
+
+      <p>
+        这其实和人类组织一样:流水线工人不需要老板,研究员必须有导师。
+        我们在重新发明组织管理学 —— 只不过这次的对象不是人,是 AI。
+      </p>
+
+      <h2>一个判断</h2>
+      <p>
+        我赌:未来一年会出现"Agent 拓扑描述语言",类似今天的工作流引擎(BPMN),
+        但语义是 AI-native 的。我们会开始争论:
+        "你这个组织设计有反模式" —— 像今天 code review 一样。
+      </p>
+    </div>
+
+    <footer class="article__footer">
+      <a href="prompt-as-program.html">← 上一篇:提示词是新的编程语言</a>
+      <a href="from-tool-to-colleague.html">下一篇:从工具到同事 →</a>
+    </footer>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 Zero · 一个非商业的个人记录</div>
+        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

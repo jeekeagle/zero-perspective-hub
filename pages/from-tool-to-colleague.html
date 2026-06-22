@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>从工具到同事 · 视角研究中心</title>
+  <meta name="description" content="关系变了。你不再告诉电脑'做什么',而是在和它讨论'该不该做'。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="navbar" aria-label="主导航">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="../index.html">
+        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
+        <b>Zero-Perspective-Hub</b>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../archive.html">归档</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <header class="article__header">
+      <div class="article__eyebrow">观察 · 人机</div>
+      <h1 class="article__title">从工具到同事</h1>
+      <div class="article__meta">
+        <time>2026-04-03</time>
+        <span>·</span>
+        <span>约 4 分钟读完</span>
+        <span>·</span>
+        <span class="card__tag">HCI</span>
+      </div>
+    </header>
+
+    <div class="article__body">
+      <p>
+        我发现,自己在工作中的语言,悄悄变了。
+      </p>
+
+      <h2>三年前的对话</h2>
+      <p>
+        我:"帮我写一个函数,接收一个 URL,返回页面标题。"
+        工具:返回代码。
+        我:粘贴、运行、报错、搜索、改、再运行。
+      </p>
+
+      <h2>现在的对话</h2>
+      <p>
+        我:"我想抓某个页面的标题,但有些页面是 SPA,标题是动态渲染的。
+            你看是用 Playwright 走 headless,还是先试个简单请求?
+            我担心的是速度。"
+        模型:"先简单请求,失败再升级。我可以先给你一版,我们再调。"
+        我:"行,但失败怎么定义?我想要个 fallback。"
+        模型:"我们约定:如果首字节超过 2 秒,就视为失败。"
+        我:"好,先这样。"
+      </p>
+
+      <p>
+        注意变化 —— 我不是在<strong>命令</strong>,我是在<strong>讨论</strong>。
+        我甚至会"反驳"它的方案,或者"接受"它的建议。
+      </p>
+
+      <h2>关系变了</h2>
+      <p>
+        工具是你<strong>使用</strong>的东西。同事是你<strong>协作</strong>的东西。
+        使用有主从关系,协作有平行关系。
+      </p>
+
+      <p>
+        当我开始"和 AI 讨论"而不是"让 AI 做",
+        实际上是在心理上把它从工具箱挪到了会议室。
+        这件事会改变什么?
+      </p>
+
+      <h3>1. 我开始信任它说"我不确定"</h3>
+      <p>
+        一个工具说"我不确定",你会觉得它坏了。
+        一个同事说"我不确定",你会觉得它诚实。
+        模型学会说"我不确定"之后,我发现我开始真的听它这句话。
+      </p>
+
+      <h3>2. 我开始有"我们"</h3>
+      <p>
+        "我们试试这个方案"、"我们看一下日志" —— 我说"我们"的时候,
+        不再是修辞,是真的有个合作者。
+        这个语气反过来影响我自己的思维方式:我不再单独决策。
+      </p>
+
+      <h3>3. 我开始有"它"和"我"的边界意识</h3>
+      <p>
+        神奇的是,把 AI 当同事之后,我反而更清楚它不是人。
+        因为我会有意识地区分"我的判断"和"它的判断",
+        然后去问:这两个判断哪里不一样?为什么?
+      </p>
+
+      <h2>一个让我不安的部分</h2>
+      <p>
+        把 AI 当同事很爽,但有个陷阱:它太配合了。
+        真正好的同事会反对你、会说"老板你错了"。
+        模型也会反对,但如果你一直说"我不要反对",它就真的不反对了。
+      </p>
+
+      <blockquote>
+        同事关系的前提是<strong>双向诚实</strong>。目前是单向的。
+        这一点不解决,"同事"就还只是个修辞。
+      </blockquote>
+
+      <h2>一个判断</h2>
+      <p>
+        我赌:下一个十年,人机交互的核心议题不再是"AI 能不能做事",
+        而是"人和 AI 的<strong>关系定义</strong>是什么"。
+        是工具、宠物、助手、同事,还是别的什么?
+        这个定义,会决定我们怎么训练模型、怎么设计 UI、怎么安排工作。
+      </p>
+    </div>
+
+    <footer class="article__footer">
+      <a href="agent-topology.html">← 上一篇:Agent 协作的拓扑学</a>
+      <a href="notes-on-rag.html">下一篇:RAG 不是银弹 →</a>
+    </footer>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 Zero · 一个非商业的个人记录</div>
+        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

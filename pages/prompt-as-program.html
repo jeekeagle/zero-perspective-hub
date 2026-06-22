@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>提示词是新的编程语言 · 视角研究中心</title>
+  <meta name="description" content="自然语言正在获得类型系统、模块化与版本管理 —— 但和传统编程不同,它的'编译'发生在模型权重里。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="navbar" aria-label="主导航">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="../index.html">
+        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
+        <b>Zero-Perspective-Hub</b>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../archive.html">归档</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <header class="article__header">
+      <div class="article__eyebrow">笔记 · 编程</div>
+      <h1 class="article__title">提示词是新的编程语言</h1>
+      <div class="article__meta">
+        <time>2026-05-10</time>
+        <span>·</span>
+        <span>约 4 分钟读完</span>
+        <span>·</span>
+        <span class="card__tag">Prompt</span>
+      </div>
+    </header>
+
+    <div class="article__body">
+      <p>
+        很多人对"prompt 是程序"这个说法嗤之以鼻。我理解,
+        但我越来越觉得,这是真的 —— 只是它运行在一台你看不见的机器上。
+      </p>
+
+      <h2>它越来越像程序</h2>
+      <p>
+        早期 prompt 是一段自然语言描述:"请你扮演一个友好的客服,回答用户的提问。"
+        那不是程序,那是一段<strong>说明文</strong>。
+      </p>
+
+      <p>
+        现在的 prompt 长这样:
+      </p>
+
+      <pre><code># role
+你是 {{ company_name }} 的高级客服。
+
+# context
+- 已知产品: {{ product_list }}
+- 当前用户: {{ user_segment }}
+- 上一轮已答: {{ previous_turn }}
+
+# task
+判断用户意图 → 选择工具 → 输出 JSON 格式响应
+
+# output_schema
+{
+  "intent": "refund | track | info | handoff",
+  "tool": "string | null",
+  "reply": "string",
+  "confidence": "0-1"
+}</code></pre>
+
+      <p>
+        这不就是带模板的 DSL 吗?
+      </p>
+
+      <h2>三个相似之处</h2>
+      <ul>
+        <li><strong>类型系统</strong> —— 通过 output_schema 强制模型输出结构化数据,这是运行时类型检查。</li>
+        <li><strong>模块化</strong> —— 大 prompt 拆成小 prompt 拼装,这是函数组合。</li>
+        <li><strong>版本管理</strong> —— 同一个 skill 不同 prompt 版本的 diff,这是语义化版本。</li>
+      </ul>
+
+      <h2>三个不一样的地方</h2>
+      <ul>
+        <li><strong>编译是模糊的</strong> —— 同一个 prompt 跑十次,得到十次略有不同的结果。</li>
+        <li><strong>依赖是隐式的</strong> —— 你的 prompt 强依赖于某个模型版本,但这层依赖不在你的代码里,而在模型权重里。</li>
+        <li><strong>调试是叙事性的</strong> —— 你不能"打断点",你只能反复"问它当时在想什么"。</li>
+      </ul>
+
+      <h2>一个结论</h2>
+      <p>
+        我不再把 prompt 当作文本。我把它当作源码。
+        源码就该有:版本控制、单元测试、code review、重构历史。
+      </p>
+
+      <p>
+        那些只把 prompt 当作"问 AI 的句子"的人,
+        就像 2005 年还在用 HTML 写网站 —— 不是不能,但效率差一个数量级。
+      </p>
+    </div>
+
+    <footer class="article__footer">
+      <a href="skill-economy.html">← 上一篇:Skill 的经济学</a>
+      <a href="agent-topology.html">下一篇:Agent 协作的拓扑学 →</a>
+    </footer>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 Zero · 一个非商业的个人记录</div>
+        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

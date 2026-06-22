@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG 不是银弹,但它改变了什么 · 视角研究中心</title>
+  <meta name="description" content="检索增强被吹成万能解药,被骂成临时补丁。两种说法都有道理 —— 关键看你怎么用上下文窗口。" />
+  <link rel="icon" type="image/svg+xml" href="../img/favicon.svg" />
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body>
+  <nav class="navbar" aria-label="主导航">
+    <div class="navbar__inner">
+      <a class="navbar__brand" href="../index.html">
+        <img src="../img/logo.svg" alt="Zero-Perspective-Hub" />
+        <b>Zero-Perspective-Hub</b>
+      </a>
+      <ul class="navbar__links">
+        <li><a href="../index.html">首页</a></li>
+        <li><a href="../about.html">关于</a></li>
+        <li><a href="../archive.html">归档</a></li>
+        <li><a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a></li>
+      </ul>
+      <div class="navbar__actions">
+        <button id="themeToggle" class="navbar__icon" type="button" aria-label="切换主题"></button>
+      </div>
+    </div>
+  </nav>
+
+  <article class="article">
+    <header class="article__header">
+      <div class="article__eyebrow">笔记 · 架构</div>
+      <h1 class="article__title">RAG 不是银弹,但它改变了什么</h1>
+      <div class="article__meta">
+        <time>2026-03-18</time>
+        <span>·</span>
+        <span>约 5 分钟读完</span>
+        <span>·</span>
+        <span class="card__tag">RAG</span>
+      </div>
+    </header>
+
+    <div class="article__body">
+      <p>
+        2024 年,RAG(Retrieval-Augmented Generation)被吹成 LLM 的未来。
+        2025 年,被骂成"掩耳盗铃的临时补丁"。
+        2026 年,我自己的看法是:<strong>它没死,只是换了个位置</strong>。
+      </p>
+
+      <h2>RAG 本质上在做什么</h2>
+      <p>
+        简化一下:RAG 就是"在让模型回答之前,先去你的数据里找几段相关的,
+        把它们一起塞进 prompt"。
+      </p>
+
+      <p>
+        它的真正贡献不是"让模型变准"(其实有时候还更不准),
+        而是<strong>把"知道什么"和"会怎么想"分开了</strong>。
+      </p>
+
+      <h2>它真正改变的事</h2>
+
+      <h3>1. 知识有了"版本"</h3>
+      <p>
+        模型权重是冻结的,但你塞进去的检索结果可以是今天的。
+        这意味着:你不再需要"再训练一次"来更新知识,你只需要更新你的文档库。
+      </p>
+      <p>
+        听起来像数据库的更新。某种意义上,就是。
+      </p>
+
+      <h3>2. 引用变得可能</h3>
+      <p>
+        模型直接回答,你说"你怎么知道"——它给不出出处。
+        RAG 之后,模型回答里夹着"基于文档 X 的第 3 段",可追溯。
+      </p>
+      <p>
+        这在法律、医疗、企业内部场景里,是<strong>刚需</strong>。
+      </p>
+
+      <h3>3. 上下文窗口的玩法变了</h3>
+      <p>
+        以前我们想办法把模型"装下"所有信息。
+        现在我们接受装不下,改成"现场取用"——每次任务前现找相关的。
+      </p>
+      <p>
+        思路更接近操作系统的"按需加载",而不是"全部载入内存"。
+      </p>
+
+      <h2>RAG 解决不了的问题</h2>
+
+      <h3>1. 检索召回率</h3>
+      <p>
+        检索找不到相关文档,后面再聪明也白搭。
+        这个问题,embedding 模型解决一半,rerank 模型解决另一半,合起来还差点。
+      </p>
+
+      <h3>2. 上下文混乱</h3>
+      <p>
+        把 20 段文档塞进 prompt,模型会"注意力涣散"——每段都被部分看到,
+        但哪段都没被认真看。这就是"中间丢失"问题。
+      </p>
+
+      <h3>3. 写入方向</h3>
+      <p>
+        RAG 主要解决"读",不解决"写"。
+        你不能让模型把新知识写回文档库并保持一致——你得自己写。
+      </p>
+
+      <h2>一个架构上的判断</h2>
+      <p>
+        我自己项目里的结论:
+      </p>
+
+      <blockquote>
+        RAG 不是替代 fine-tuning,而是<strong>配合</strong>它。
+        微调给模型"风格和习惯",RAG 给模型"事实和时效"。
+        一个管"怎么说",一个管"说什么"。
+      </blockquote>
+
+      <h2>一个长期的判断</h2>
+      <p>
+        我赌:未来不会出现"RAG 2.0 取代一切"的范式。
+        会出现的是<strong>更细粒度的检索</strong>:
+        不再是"塞几段文档",而是"按需激活某些参数、某些记忆、某些工具"。
+        检索的对象从文档,扩展到<strong>任何可调用的东西</strong>。
+      </p>
+
+      <p>
+        到那时候,RAG 这个词会消失。但"按需取用"这个思想,
+        会变成 Agent 的基本操作。
+      </p>
+    </div>
+
+    <footer class="article__footer">
+      <a href="from-tool-to-colleague.html">← 上一篇:从工具到同事</a>
+      <a href="../index.html">回到首页 →</a>
+    </footer>
+  </article>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom" style="border-top: none; padding-top: 0;">
+        <div>© 2026 Zero · 一个非商业的个人记录</div>
+        <div><a href="../archive.html">归档</a> · <a href="../about.html">关于</a></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
