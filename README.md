@@ -28,13 +28,14 @@ zero-perspective-hub/
 ├── img/
 │   ├── logo.svg
 │   └── favicon.svg
-├── pages/                  # 视角文章(每篇一个 HTML)
-│   ├── when-models-think.html
-│   ├── skill-economy.html
-│   ├── prompt-as-program.html
-│   ├── agent-topology.html
-│   ├── from-tool-to-colleague.html
-│   └── notes-on-rag.html
+├── pages/                  # 视角文章(每篇一个 HTML,共 52 章)
+│   ├── system-dynamics-perspective.html
+│   ├── bayesian-thinking-perspective.html
+│   ├── economics-perspective.html
+│   ├── mathematics-perspective-4-5-1.html
+│   ├── philosophy-perspective.html
+│   └── scientist-perspective.html
+│   ... (共 52 个)
 └── README.md
 ```
 

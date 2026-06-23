@@ -8,51 +8,51 @@
     <atom:link href="https://jeekeagle.github.io/zero-perspective-hub/feed.xml" rel="self" type="application/rss+xml" />
 
     <item>
-      <title>当模型开始"思考"</title>
-      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/when-models-think.html</link>
-      <description>从一次性回答到多步推理,LLM 正在悄悄变成另一种东西 —— 不是更聪明的搜索框,而是会分镜头的同事。</description>
-      <pubDate>Sun, 15 Jun 2026 00:00:00 +0800</pubDate>
-      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/when-models-think.html</guid>
+      <title>系统动力学视角分析</title>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/system-dynamics-perspective.html</link>
+      <description>从系统动力学的角度分析问题,看反馈回路、延迟与杠杆点。</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/system-dynamics-perspective.html</guid>
     </item>
 
     <item>
-      <title>Skill 的经济学</title>
-      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/skill-economy.html</link>
-      <description>当提示词开始可被交易、可被复用、可被打包 —— 一种新的微技能市场正在 prompt 层生长。</description>
-      <pubDate>Thu, 28 May 2026 00:00:00 +0800</pubDate>
-      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/skill-economy.html</guid>
+      <title>贝叶斯思维视角分析</title>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/bayesian-thinking-perspective.html</link>
+      <description>用先验 + 证据 = 后验的框架,在不确定中持续校准判断。</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/bayesian-thinking-perspective.html</guid>
     </item>
 
     <item>
-      <title>提示词是新的编程语言</title>
-      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/prompt-as-program.html</link>
-      <description>自然语言正在获得类型系统、模块化与版本管理 —— 但和传统编程不同,它的编译是发生在模型权重里的。</description>
-      <pubDate>Sun, 10 May 2026 00:00:00 +0800</pubDate>
-      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/prompt-as-program.html</guid>
+      <title>经济学视角分析</title>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/economics-perspective.html</link>
+      <description>供需、稀缺、激励、成本 —— 用经济学语言描述世界。</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/economics-perspective.html</guid>
     </item>
 
     <item>
-      <title>Agent 协作的拓扑学</title>
-      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/agent-topology.html</link>
-      <description>单体 Agent 不够用之后,我们开始画图 —— 串行、并行、投票、监督。每种拓扑都对应一种组织哲学。</description>
-      <pubDate>Wed, 22 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/agent-topology.html</guid>
+      <title>数学视角分析</title>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/mathematics-perspective-4-5-1.html</link>
+      <description>用形式化语言描述世界的方式 —— 数学视角。</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/mathematics-perspective-4-5-1.html</guid>
     </item>
 
     <item>
-      <title>从工具到同事</title>
-      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/from-tool-to-colleague.html</link>
-      <description>关系变了。你不再告诉电脑"做什么",而是在和它讨论"该不该做"。这个转变,比模型本身重要得多。</description>
-      <pubDate>Thu, 03 Apr 2026 00:00:00 +0800</pubDate>
-      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/from-tool-to-colleague.html</guid>
+      <title>哲学视角分析</title>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/philosophy-perspective.html</link>
+      <description>追问"为什么"、定义概念、检验前提 —— 哲学家的提问方式。</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/philosophy-perspective.html</guid>
     </item>
 
     <item>
-      <title>RAG 不是银弹,但它改变了什么</title>
-      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/notes-on-rag.html</link>
-      <description>检索增强被吹成万能解药,被骂成临时补丁。两种说法都有道理 —— 关键看你怎么用上下文窗口。</description>
-      <pubDate>Wed, 18 Mar 2026 00:00:00 +0800</pubDate>
-      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/notes-on-rag.html</guid>
+      <title>科学家视角分析</title>
+      <link>https://jeekeagle.github.io/zero-perspective-hub/pages/scientist-perspective.html</link>
+      <description>假设 + 实验 + 同行评审 —— 科学家看问题的角度。</description>
+      <pubDate>Mon, 23 Jun 2026 00:00:00 +0800</pubDate>
+      <guid>https://jeekeagle.github.io/zero-perspective-hub/pages/scientist-perspective.html</guid>
     </item>
   </channel>
 </rss>

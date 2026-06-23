@@ -102,7 +102,7 @@ FAMILIES = {
         "psychologist-perspective",
         "counselor-perspective",
     ],
-    "占位篇": list(PLACEHOLDER_SLUGS.keys()),
+    # 注:占位篇已删除,不再列出
 }
 
 # 中文序号
@@ -158,13 +158,8 @@ def build_toc(metas, prefix="", current_slug=None):
         valid = [s for s in slugs if s in metas]
         if not valid:
             continue
-        # 占位篇:标 "附"
-        if family_name == "占位篇":
-            label = "附编 · 待续"
-        else:
-            label = family_name
         lines.append('  <div class="cn-toc__group">')
-        lines.append(f'    <div class="cn-toc__group-label">{label}</div>')
+        lines.append(f'    <div class="cn-toc__group-label">{family_name}</div>')
         lines.append('    <ul class="cn-toc__list">')
         for slug in valid:
             chapter_num += 1

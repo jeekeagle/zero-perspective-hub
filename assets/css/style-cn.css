@@ -1084,6 +1084,18 @@ pre code {
   line-height: 1.55;
 }
 .cn-chapter__body pre code { background: none; padding: 0; color: var(--cn-ink); }
+/* ASCII 结构图:严格等宽 + 紧凑行距,保证 box-drawing 字符对齐 */
+.cn-chapter__body pre.cn-ascii-art {
+  font-family: "JetBrains Mono", "SF Mono", "Cascadia Mono", Consolas, "Courier New", monospace;
+  font-size: 0.82em;
+  line-height: 1.35;
+  letter-spacing: 0;
+  white-space: pre;
+  color: var(--cn-ink);
+  background: var(--cn-paper-soft, #f6f1e7);
+  border-left: 3px solid var(--cn-vermilion, #a93226);
+  padding: 1.1em 1.4em;
+}
 .cn-chapter__body code {
   font-family: "SF Mono", "JetBrains Mono", Consolas, monospace;
   font-size: 0.92em;
