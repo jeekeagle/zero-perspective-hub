@@ -166,6 +166,25 @@ pre code {
   border-bottom: 1px solid var(--cn-border);
   padding: 1.4rem 0;
 }
+/* 首页把 logo 居中:不调整链接布局,只让 brand 块水平居中 */
+.cn-nav.is-centered .cn-nav__inner {
+  position: relative;
+  justify-content: center;
+}
+.cn-nav.is-centered .cn-nav__brand {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.cn-nav.is-centered .cn-nav__drawer-toggle,
+.cn-nav.is-centered .cn-nav__actions {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.cn-nav.is-centered .cn-nav__drawer-toggle { left: 1.2rem; }
+.cn-nav.is-centered .cn-nav__actions { right: 1.2rem; }
 .cn-nav__inner {
   display: flex;
   align-items: center;

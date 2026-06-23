@@ -54,7 +54,7 @@
 <body>
   <div class="cn-drawer-overlay"></div>
   <!-- 导航 -->
-  <nav class="cn-nav" aria-label="主导航">
+  <nav class="cn-nav is-centered" aria-label="主导航">
     <div class="container cn-nav__inner">
       <button class="cn-nav__drawer-toggle" type="button" aria-label="打开目录">☰</button>
       <a class="cn-nav__brand" href="index.html">
@@ -112,301 +112,83 @@
   </header>
 
   <main>
-    <!-- 目录预览 -->
-    <section id="toc-preview" class="cn-section">
-      <div class="container">
-        <div class="cn-section__header">
-          <span class="cn-seal-mark">目</span>
-          <h2>本书目录</h2>
-          <p>六章视角,两章方法,一组检验 —— 按卷编排,顺序阅读最佳,跳读亦可。</p>
-        </div>
-        <div class="cn-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-          <a class="cn-card" href="intro.html" data-stamp="序">
-            <div class="cn-card__eyebrow">序章 · 序言</div>
-            <h3 class="cn-card__title">为什么要开这间镜片铺子</h3>
-            <p class="cn-card__desc">世界不缺乏观点,缺乏的是看观点的视角。这间铺子,陈列镜片,也陈列方法。</p>
-          </a>
-          <a class="cn-card" href="pages/when-models-think.html" data-stamp="一">
-            <div class="cn-card__eyebrow">第一编 · 第一章</div>
-            <h3 class="cn-card__title">分类学视角</h3>
-            <p class="cn-card__desc">从分类原则、分类方法及其背后的认知逻辑、权力结构和演化规律看事物。</p>
-          </a>
-          <a class="cn-card" href="pages/skill-economy.html" data-stamp="二">
-            <div class="cn-card__eyebrow">第一编 · 第二章</div>
-            <h3 class="cn-card__title">经济学视角</h3>
-            <p class="cn-card__desc">从供需、交易、成本、激励的角度看 Agent 时代的"微技能市场"。</p>
-          </a>
-          <a class="cn-card" href="pages/prompt-as-program.html" data-stamp="三">
-            <div class="cn-card__eyebrow">第一编 · 第三章</div>
-            <h3 class="cn-card__title">程序视角</h3>
-            <p class="cn-card__desc">把提示词当作"源码",看它如何获得类型、模块、版本这些程序性特征。</p>
-          </a>
-          <a class="cn-card" href="pages/agent-topology.html" data-stamp="四">
-            <div class="cn-card__eyebrow">第一编 · 第四章</div>
-            <h3 class="cn-card__title">拓扑学视角</h3>
-            <p class="cn-card__desc">把 Agent 协作画成图,看串行、并行、投票、监督这些结构背后的组织哲学。</p>
-          </a>
-          <a class="cn-card" href="pages/from-tool-to-colleague.html" data-stamp="五">
-            <div class="cn-card__eyebrow">第一编 · 第五章</div>
-            <h3 class="cn-card__title">关系视角</h3>
-            <p class="cn-card__desc">从"工具-使用者"到"同事-同事":人机关系的一次范式转移。</p>
-          </a>
-          <a class="cn-card" href="pages/notes-on-rag.html" data-stamp="六">
-            <div class="cn-card__eyebrow">第一编 · 第六章</div>
-            <h3 class="cn-card__title">架构视角</h3>
-            <p class="cn-card__desc">从知识的版本、引用、按需加载,看 RAG 改变了什么、没改变什么。</p>
-          </a>
-          <a class="cn-card" href="#methods" data-stamp="铸">
-            <div class="cn-card__eyebrow">第二编 · 方法</div>
-            <h3 class="cn-card__title">视角锻造法 & 检验法</h3>
-            <p class="cn-card__desc">镜片怎么造出来?怎么知道它有没有用?两章方法,讲工艺与验收。</p>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 已收录 -->
-    <section id="perspectives" class="cn-section">
-      <div class="container">
-        <div class="cn-section__header">
-          <span class="cn-seal-mark">收</span>
-          <h2>已收录</h2>
-          <p>本编已收 52 章视角。每章一镜,镜各异形 —— 戴上,你看到的世界就不一样。</p>
-        <div class="cn-grid">
-          <a class="cn-card" href="pages/when-models-think.html" data-stamp="一">
-            <div class="cn-card__eyebrow">视角 · 分类学                    <a class="cn-card" href="pages/ancient-chinese-history-development-perspective.html" data-stamp="二">
-            <div class="cn-card__seal">二                    <a class="cn-card" href="pages/host-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/writer-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/doctor-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/coordination-thinking-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/historian-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/narrative-thinking-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/philosopher-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/philosopher-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/philosophy-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/engineer-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/architect-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/lawyer-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/psychologist-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/control-thinking-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/data-scientist-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/science-writer-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/scientist-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/management-consultant-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/screenwriter-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/artist-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/artist-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/designer-perspective-4-5-1-method.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/cross-cultural-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/counselor-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/sales-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/sales-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/sales-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/ancient-chinese-history-development-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/host-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一                    <a class="cn-card" href="pages/writer-perspective.html" data-stamp="一">
-            <div class="cn-card__seal">一</div>
-            <h3 class="cn-card__title">作家视角分析提示词 4.5.1</h3>
-            <p class="cn-card__desc">从作家视角分析问题,核心是'生活在边缘,表达在当下,理解在高处'的三位一体模型。Use when user says '作家视角分析', '从作家角度分析', or gives a problem r...</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">主持人视角分析视角</h3>
-            <p class="cn-card__desc">从场域编织者的角度分析问题，感知场域、编织场域、让场域自动运转</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">中国古代史发展视角分析视角</h3>
-            <p class="cn-card__desc">从三次大变革的角度分析中国古代史发展规律，包括周秦之变、唐宋之变、明清之变，以及大一统的生成与维持、周期律的破解、中国古代史的独特性等核心要点</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">销售视角分析视角</h3>
-            <p class="cn-card__desc">从'卖东西'到'建立关系'的销售视角分析工具，通过要点索引+问题匹配机制，只输出问题最相关的1-2个核心要点，深度展开分析</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">销售视角分析视角</h3>
-            <p class="cn-card__desc">从'卖东西'到'建立关系'的销售视角分析工具，通过要点索引+问题匹配机制，只输出问题最相关的1-2个核心要点，深度展开分析</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">销售视角分析视角</h3>
-            <p class="cn-card__desc">从'卖东西'到'建立关系'的销售视角分析工具，通过要点索引+问题匹配机制，只输出问题最相关的1-2个核心要点，深度展开分析</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">辅导员视角分析视角</h3>
-            <p class="cn-card__desc">从辅导员的双重身份困境出发，分析学生问题、工作困境、制度矛盾，核心是'看见人'而非'管人'</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">跨文化研究视角分析视角</h3>
-            <p class="cn-card__desc">从文化差异到文化融合的透视镜，理解文化如何塑造认知和行为，设计跨文化管理路径</p>
-            <div class="cn-card__tags"><span class="tag">管理</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">设计师视角分析视角</h3>
-            <p class="cn-card__desc">从用户视角出发，通过实验主义方法和跨界协同，在约束条件下找到最优解，最终成就用户的设计思维分析工具。</p>
-            <div class="cn-card__tags"><span class="tag">设计</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">艺术家视角分析视角</h3>
-            <p class="cn-card__desc">从艺术家的创作方法论出发，通过敏锐观察、自由想象、直觉判断、约束创造、情感融合五个核心要点，帮助用户在约束中创造可能性，发现看不见的联系，让看不见的变成看得见的。</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">艺术家视角分析视角</h3>
-            <p class="cn-card__desc">从艺术家的创作方法论出发，通过敏锐观察、自由想象、直觉判断、约束创造、情感融合五个核心要点，帮助用户在约束中创造可能性，发现看不见的联系，让看不见的变成看得见的。</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">编剧视角分析视角</h3>
-            <p class="cn-card__desc">用编剧的思维方式分析问题:从画面可拍性、冲突设计、人物弧光、情感共鸣四个核心要点出发,精准匹配问题,深度展开分析。</p>
-            <div class="cn-card__tags"><span class="tag">设计</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">管理咨询师视角分析提示词4.5.1</h3>
-            <p class="cn-card__desc">用管理咨询师的视角分析问题——建立信任关系问出真问题，结构化拆解复杂问题，系统性思考问题关系，用工具让问题显形，帮助客户自己找到答案</p>
-            <div class="cn-card__tags"><span class="tag">管理</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">科学家视角分析视角</h3>
-            <p class="cn-card__desc">用假说驱动和证伪思维,从观察出发建立可验证的解释框架,不断逼近真理</p>
-            <div class="cn-card__tags"><span class="tag">科学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">科学作家视角分析提示词4.5.1</h3>
-            <p class="cn-card__desc">从知识搬运工到思想策展人，用科学思维重构写作，让科学发现变成认知框架。Use when user says '生成科学作家视角', '科学作家视角分析工具', or gives a science w...</p>
-            <div class="cn-card__tags"><span class="tag">科学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">数据科学家视角分析视角</h3>
-            <p class="cn-card__desc">从数据到洞察的翻译官视角，强调业务理解优先、数据边界意识、翻译沟通能力、数据文化推动。Use when user says '生成数据科学家视角', '数据科学家视角分析工具', or gives a...</p>
-            <div class="cn-card__tags"><span class="tag">科学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">控制思维视角分析视角</h3>
-            <p class="cn-card__desc">从全能幻觉到两分智慧的分析视角，帮助区分能控制和不能控制的部分，从对抗念头转向选择关注点，从控制转向协作。</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">心理学家视角分析视角</h3>
-            <p class="cn-card__desc">通过科学方法看见行为背后的生成器(认知/行为/情境),并基于生成器设计干预的分析框架</p>
-            <div class="cn-card__tags"><span class="tag">心理学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">律师视角分析提示词4.5.1</h3>
-            <p class="cn-card__desc">从规则与证据的双重锚定分析问题，识别规则空间、构建证据链条、界定风险边界</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">建筑设计师视角分析视角</h3>
-            <p class="cn-card__desc">从建筑设计师的视角分析问题,核心是理解人与空间的关系,包括人本感知、环境共生、空间叙事、认知工具、长期价值五个要点。Use when user asks to analyze a problem fr...</p>
-            <div class="cn-card__tags"><span class="tag">设计</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">工程师视角分析视角</h3>
-            <p class="cn-card__desc">工程师视角——从手艺到工艺的跃迁，用模块化、标准化、约束优化和规模化思维解决复杂问题</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">哲学视角分析提示词4.5.1</h3>
-            <p class="cn-card__desc">从元认知框架审视思考方式本身,通过溯源、解构、升维、认知自觉四个核心要点,钻到认知的地下层,获得认知的自由</p>
-            <div class="cn-card__tags"><span class="tag">哲学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">哲学家视角分析视角</h3>
-            <p class="cn-card__desc">从概念游戏到本质追问的哲学家视角，通过概念分析、逻辑推演、本质直观三层思维，帮助用户看见问题的本质、追问根本原因、审视价值前提。Use when user says '哲学家视角', '用哲学家视角分...</p>
-            <div class="cn-card__tags"><span class="tag">哲学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">哲学家视角分析视角</h3>
-            <p class="cn-card__desc">从概念游戏到本质追问的哲学家视角，通过概念分析、逻辑推演、本质直观三层思维，帮助用户看见问题的本质、追问根本原因、审视价值前提。Use when user says '哲学家视角', '用哲学家视角分...</p>
-            <div class="cn-card__tags"><span class="tag">哲学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">叙事思维视角分析提示词4.5.1</h3>
-            <p class="cn-card__desc">从叙事是宇宙的第一性原理出发,分析问题中的叙事结构、主观选择、权力竞争和意义建构机制</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">历史学家视角分析视角</h3>
-            <p class="cn-card__desc">历史学家视角：在时间中看见模式，用批判性史料分析、模式识别、横向对比、解释框架建构、时间贯通思维等方法，从碎片中建构意义，在不确定中寻找方向</p>
-            <div class="cn-card__tags"><span class="tag">历史</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">协调思维视角分析视角</h3>
-            <p class="cn-card__desc">从控制到协同的认知革命,通过协调思维解决复杂系统中的多方协同问题</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">医生视角分析提示词4.5.1</h3>
-            <p class="cn-card__desc">在不确定中寻找确定——用医生的思维方式整合信息、做出决策、平衡科学与人文</p>
-            <div class="cn-card__tags"><span class="tag">科学</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">作家视角分析提示词 4.5.1</h3>
-            <p class="cn-card__desc">从作家视角分析问题,核心是'生活在边缘,表达在当下,理解在高处'的三位一体模型。Use when user says '作家视角分析', '从作家角度分析', or gives a problem r...</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">主持人视角分析视角</h3>
-            <p class="cn-card__desc">从场域编织者的角度分析问题，感知场域、编织场域、让场域自动运转</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">中国古代史发展视角分析视角</h3>
-            <p class="cn-card__desc">从三次大变革的角度分析中国古代史发展规律，包括周秦之变、唐宋之变、明清之变，以及大一统的生成与维持、周期律的破解、中国古代史的独特性等核心要点</p>
-            <div class="cn-card__tags"><span class="tag">其他</span></div>
-          </a>
-</div>
-            <h3 class="cn-card__title">分类学视角</h3>
-            <p class="cn-card__desc">从分类原则、分类方法及其背后的认知逻辑、权力结构和演化规律看事物。</p>
-            <div class="cn-card__meta">
-              <time>2026.06</time>
-              <span class="cn-card__tag">分类</span>
-            </div>
-          </a>
-        </div>
-        <p class="cn-section__more"><a href="archive.html">查看全部 59 章 →</a></p>
-      </div>
-    </section>
 
     <!-- 分类结构 -->
-    <section id="methods" class="cn-section">
+    <section id="families" class="cn-section">
       <div class="container">
         <div class="cn-section__header">
           <span class="cn-seal-mark">编</span>
           <h2>分类结构</h2>
-          <p>全书按"编 / 章"两层组织 —— 第一编 视角、第二编 方法、第三编 检验。</p>
+          <p>五十二副镜片,按"看世界的方法"分作六大家族 —— 每一族是一种特定的认识框架,戴上后看出去的光不一样。</p>
         </div>
-        <div class="cn-grid">
-          <a class="cn-card" href="#perspectives" data-stamp="一" style="cursor: default;">
-            <div class="cn-card__eyebrow">第一编 · 视角</div>
-            <h3 class="cn-card__title">五十二副镜片</h3>
-            <p class="cn-card__desc">系统、思维方法、经济管理、自然科学、人文社会、职业角色 —— 六大家族,五十二副镜片。每一副都是一种特定的"看法",戴上它你会看到原本看不到的结构。</p>
+        <div class="cn-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+
+          <a class="cn-card" href="pages/system-dynamics-perspective.html" data-stamp="系">
+            <div class="cn-card__eyebrow">一 · 系统与复杂</div>
+            <h3 class="cn-card__title">把世界看成回路</h3>
+            <p class="cn-card__desc">用反馈、涌现、演化看变化。系统动力学、生态位、复杂科学、累积效应、拐点、宇宙 …… 共 8 章。</p>
             <div class="cn-card__meta">
-              <span class="cn-card__tag">已记 52 章</span>
+              <span class="cn-card__tag">8 章</span>
+              <span class="cn-card__tag">代表 · 系统动力学</span>
             </div>
           </a>
-          <a class="cn-card" href="#methods" data-stamp="二" style="cursor: default;">
-            <div class="cn-card__eyebrow">第二编 · 方法</div>
-            <h3 class="cn-card__title">两把工具</h3>
-            <p class="cn-card__desc">锻造法(怎么从经验里提炼出可复用的视角)+ 检验法(怎么知道这副镜片有没有用)。视角可不可用,要在这里见真章。</p>
+
+          <a class="cn-card" href="pages/bayesian-thinking-perspective.html" data-stamp="思">
+            <div class="cn-card__eyebrow">二 · 思维方法</div>
+            <h3 class="cn-card__title">把思想看成工具</h3>
+            <p class="cn-card__desc">贝叶斯、剃刀、建构与解构、边际、控制、叙事、逻辑 —— 关于"怎么想"本身的九种手艺。共 9 章。</p>
             <div class="cn-card__meta">
-              <span class="cn-card__tag">撰稿中</span>
+              <span class="cn-card__tag">9 章</span>
+              <span class="cn-card__tag">代表 · 贝叶斯思维</span>
             </div>
           </a>
-          <a class="cn-card" href="archive.html" data-stamp="录" style="cursor: default;">
-            <div class="cn-card__eyebrow">第三编 · 附录</div>
-            <h3 class="cn-card__title">索引 · 关于</h3>
-            <p class="cn-card__desc">完整目录、按时间倒序的索引、关于本书与作者的说明(关于页)。</p>
+
+          <a class="cn-card" href="pages/economics-perspective.html" data-stamp="经">
+            <div class="cn-card__eyebrow">三 · 经济与管理</div>
+            <h3 class="cn-card__title">把人看成交易者</h3>
+            <p class="cn-card__desc">供需、稀缺、激励、决策、领导力、供应链、数字化、销售、咨询 —— 围绕"资源配置"的九副镜片。共 9 章。</p>
             <div class="cn-card__meta">
-              <span class="cn-card__tag">已就绪</span>
+              <span class="cn-card__tag">9 章</span>
+              <span class="cn-card__tag">代表 · 经济学</span>
             </div>
           </a>
+
+          <a class="cn-card" href="pages/mathematics-perspective-4-5-1.html" data-stamp="理">
+            <div class="cn-card__eyebrow">四 · 自然与形式科学</div>
+            <h3 class="cn-card__title">把世界看成方程</h3>
+            <p class="cn-card__desc">数学、微积分、数学建模、统计学、AI、数据科学 —— 用形式化语言描述世界的方式。共 6 章。</p>
+            <div class="cn-card__meta">
+              <span class="cn-card__tag">6 章</span>
+              <span class="cn-card__tag">代表 · 数学</span>
+            </div>
+          </a>
+
+          <a class="cn-card" href="pages/philosophy-perspective.html" data-stamp="人">
+            <div class="cn-card__eyebrow">五 · 人文与社会</div>
+            <h3 class="cn-card__title">把人看成意义制造者</h3>
+            <p class="cn-card__desc">哲学、心理学、宗教学、中国古代史、跨文化 —— 关于"人何以成为人"的五种切面。共 5 章。</p>
+            <div class="cn-card__meta">
+              <span class="cn-card__tag">5 章</span>
+              <span class="cn-card__tag">代表 · 哲学</span>
+            </div>
+          </a>
+
+          <a class="cn-card" href="pages/scientist-perspective.html" data-stamp="职">
+            <div class="cn-card__eyebrow">六 · 职业视角</div>
+            <h3 class="cn-card__title">把工作看成处境</h3>
+            <p class="cn-card__desc">科学家、工程师、医生、律师、作家、主持人、辅导员 …… 十五种职业,十五种"身在此山中"的看法。共 15 章。</p>
+            <div class="cn-card__meta">
+              <span class="cn-card__tag">15 章</span>
+              <span class="cn-card__tag">代表 · 科学家</span>
+            </div>
+          </a>
+
         </div>
+        <p class="cn-section__more" style="margin-top: 1.5rem; font-size: 0.95rem; color: var(--cn-ink-muted, #7a7368);">
+          <a href="archive.html" style="color: inherit;">查看全部 52 章镜片 →</a>
+          <span style="margin: 0 0.6rem; opacity: 0.5;">·</span>
+          <a href="intro.html" style="color: inherit;">先读序言 →</a>
+        </p>
       </div>
     </section>
 
