@@ -166,25 +166,24 @@ pre code {
   border-bottom: 1px solid var(--cn-border);
   padding: 1.4rem 0;
 }
-/* 首页把 logo 居中:不调整链接布局,只让 brand 块水平居中 */
+/* 首页:logo 摆在 nav 左半区(nav 横向 25% 处)水平居中。
+   链接/搜索/主题按钮仍保留在原位(右半区靠右)。 */
 .cn-nav.is-centered .cn-nav__inner {
   position: relative;
-  justify-content: center;
+  justify-content: flex-end;  /* 链接/搜索靠右 */
 }
 .cn-nav.is-centered .cn-nav__brand {
   position: absolute;
-  left: 50%;
+  left: 25%;  /* nav 横向 25% = 左半区的中点 */
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.cn-nav.is-centered .cn-nav__drawer-toggle,
-.cn-nav.is-centered .cn-nav__actions {
+.cn-nav.is-centered .cn-nav__drawer-toggle {
   position: absolute;
+  left: 1.2rem;
   top: 50%;
   transform: translateY(-50%);
 }
-.cn-nav.is-centered .cn-nav__drawer-toggle { left: 1.2rem; }
-.cn-nav.is-centered .cn-nav__actions { right: 1.2rem; }
 .cn-nav__inner {
   display: flex;
   align-items: center;
@@ -611,6 +610,34 @@ pre code {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+/* 通用 .container 宽度限制(其它页面也能复用) */
+.cn-section .container,
+.cn-quotes .container,
+.cn-footer .container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+@media (max-width: 768px) {
+  .cn-section .container,
+  .cn-quotes .container,
+  .cn-footer .container { padding: 0 1.2rem; }
+}
+/* 首页"分类结构"卡片留白:左右页边距与正文区域协调 */
+.cn-section--families .cn-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  gap: 1.75rem;
+  box-sizing: border-box;
+}
+@media (min-width: 1024px) {
+  .cn-section--families .cn-grid { padding: 0 2.5rem; gap: 2rem; }
+}
+@media (min-width: 1280px) {
+  .cn-section--families .cn-grid { padding: 0 4rem; }
 }
 .cn-card {
   display: block;
