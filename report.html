@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>项目汇报 · 视角研究中心 · Zero-Perspective-Hub</title>
+  <meta name="description" content="零号实验 · 视角研究中心项目汇报 —— 52 副镜片、6 大家族、一本非商业的小书。" />
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg" />
+  <style>
+    /* ============== 主题色 ============== */
+    :root {
+      --cn-paper: #f6f1e7;
+      --cn-paper-soft: #efe7d6;
+      --cn-ink: #1c1815;
+      --cn-ink-soft: #4a4138;
+      --cn-ink-faint: #8a8074;
+      --cn-vermilion: #a93226;
+      --cn-vermilion-soft: #c8513f;
+      --cn-gold: #b8924a;
+      --cn-jade: #5a6d4e;
+      --cn-border: #d9cdb7;
+      --cn-border-soft: #e8dcc4;
+      --cn-font-kai: "LXGW WenKai", "霞鹜文楷", "STKaiti", "KaiTi", "Kaiti SC", "楷体", serif;
+      --cn-font-serif: "Source Han Serif SC", "Noto Serif SC", "Songti SC", "宋体", serif;
+      --cn-font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; }
+    body {
+      font-family: var(--cn-font-kai);
+      background: var(--cn-paper);
+      color: var(--cn-ink);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* ============== Slide 容器 ============== */
+    .deck {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      padding: 5vh 8vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.45s ease, transform 0.45s ease;
+      pointer-events: none;
+      background: var(--cn-paper);
+    }
+    .slide.is-active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    .slide.is-prev {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+    /* ============== 共用排版 ============== */
+    .stamp {
+      position: absolute;
+      top: 3.5vh;
+      right: 5vw;
+      width: 64px;
+      height: 64px;
+      border: 2px solid var(--cn-vermilion);
+      color: var(--cn-vermilion);
+      font-family: var(--cn-font-kai);
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      letter-spacing: 0;
+      transform: rotate(-3deg);
+      opacity: 0.85;
+      background: rgba(255, 255, 255, 0.4);
+    }
+    .chapter-num {
+      font-family: var(--cn-font-kai);
+      font-size: 0.95rem;
+      letter-spacing: 0.3em;
+      color: var(--cn-vermilion);
+      margin-bottom: 1.2rem;
+      font-weight: 600;
+    }
+    h1.slide-title {
+      font-family: var(--cn-font-kai);
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--cn-ink);
+      margin-bottom: 1.8rem;
+      line-height: 1.25;
+    }
+    h1.slide-title .accent { color: var(--cn-vermilion); }
+    h2 {
+      font-family: var(--cn-font-kai);
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--cn-vermilion);
+      letter-spacing: 0.15em;
+      margin: 1.6rem 0 0.8rem;
+    }
+    p, li {
+      font-family: var(--cn-font-kai);
+      font-size: clamp(1rem, 1.6vw, 1.35rem);
+      line-height: 1.85;
+      color: var(--cn-ink-soft);
+      margin-bottom: 0.8rem;
+    }
+    ul { padding-left: 1.6em; }
+    li { margin-bottom: 0.4rem; }
+    .lead {
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      color: var(--cn-ink);
+      line-height: 1.7;
+      letter-spacing: 0.05em;
+    }
+    .muted { color: var(--cn-ink-faint); font-size: 0.95rem; }
+    .quote {
+      border-left: 4px solid var(--cn-vermilion);
+      padding: 0.6em 1.4em;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--cn-ink-soft);
+      background: var(--cn-paper-soft);
+      font-size: 1.1em;
+    }
+    /* ============== 封面 ============== */
+    .slide-cover {
+      background: linear-gradient(135deg, var(--cn-paper) 0%, var(--cn-paper-soft) 100%);
+    }
+    .slide-cover::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 22vh;
+      background:
+        linear-gradient(180deg, transparent 0%, rgba(89, 109, 78, 0.06) 100%),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 200' preserveAspectRatio='none'><path d='M0,200 L0,140 Q150,100 300,130 T600,110 T900,140 T1200,120 L1200,200 Z' fill='%235a6d4e' opacity='0.18'/><path d='M0,200 L0,170 Q200,150 400,165 T800,160 T1200,170 L1200,200 Z' fill='%235a6d4e' opacity='0.32'/></svg>") no-repeat bottom;
+      background-size: 100% 100%;
+    }
+    .cover-mark {
+      width: 88px;
+      height: 88px;
+      border: 3px solid var(--cn-vermilion);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 2.2rem;
+      position: relative;
+    }
+    .cover-mark::after {
+      content: "";
+      position: absolute;
+      top: 6px; right: 6px;
+      width: 12px; height: 12px;
+      background: var(--cn-gold);
+      border-radius: 50%;
+    }
+    .cover-mark-text {
+      font-family: var(--cn-font-kai);
+      font-size: 2.2rem;
+      color: var(--cn-vermilion);
+      font-weight: 700;
+    }
+    .cover-title {
+      font-family: var(--cn-font-kai);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: var(--cn-ink);
+      margin-bottom: 1.2rem;
+    }
+    .cover-subtitle {
+      font-family: var(--cn-font-kai);
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      color: var(--cn-ink-soft);
+      letter-spacing: 0.2em;
+      margin-bottom: 3.5rem;
+    }
+    .cover-meta {
+      font-family: var(--cn-font-serif);
+      font-size: 0.95rem;
+      color: var(--cn-ink-faint);
+      letter-spacing: 0.1em;
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .cover-meta .sep { color: var(--cn-vermilion); }
+    /* ============== 目录 ============== */
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 3rem;
+    }
+    .toc-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px dashed var(--cn-border-soft);
+      font-size: 1.15rem;
+      color: var(--cn-ink);
+    }
+    .toc-num {
+      font-family: var(--cn-font-kai);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--cn-vermilion);
+      min-width: 2.2rem;
+    }
+    /* ============== 家族卡片 ============== */
+    .family-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .family-card {
+      border: 1px solid var(--cn-border);
+      border-left: 4px solid var(--cn-vermilion);
+      padding: 1rem 1.2rem;
+      background: var(--cn-paper-soft);
+      border-radius: 2px;
+    }
+    .family-card .name {
+      font-family: var(--cn-font-kai);
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--cn-vermilion);
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+    .family-card .tagline {
+      font-family: var(--cn-font-kai);
+      font-size: 0.95rem;
+      color: var(--cn-ink);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+    .family-card .count {
+      font-family: var(--cn-font-serif);
+      font-size: 0.85rem;
+      color: var(--cn-ink-faint);
+      letter-spacing: 0.05em;
+    }
+    /* ============== 表格 ============== */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.2rem 0;
+      font-size: 1rem;
+    }
+    th, td {
+      padding: 0.65rem 1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--cn-border-soft);
+      font-family: var(--cn-font-kai);
+    }
+    th {
+      color: var(--cn-vermilion);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      background: var(--cn-paper-soft);
+    }
+    td.num { font-family: var(--cn-font-serif); color: var(--cn-ink); font-weight: 600; text-align: right; }
+    /* ============== 案例 ============== */
+    .case-frame {
+      background: var(--cn-paper-soft);
+      border: 1px solid var(--cn-border);
+      border-left: 4px solid var(--cn-vermilion);
+      padding: 1.4rem 1.8rem;
+      margin: 1.2rem 0;
+      font-family: var(--cn-font-kai);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+    .case-frame .label {
+      color: var(--cn-vermilion);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-right: 0.5em;
+    }
+    pre {
+      background: #1c1815;
+      color: #f6f1e7;
+      padding: 1.2em 1.4em;
+      border-radius: 2px;
+      font-family: "JetBrains Mono", "SF Mono", "Cascadia Mono", Consolas, monospace;
+      font-size: 0.9rem;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 1rem 0;
+      letter-spacing: 0;
+      white-space: pre;
+    }
+    /* ============== 时间线 ============== */
+    .timeline {
+      position: relative;
+      margin: 1.5rem 0;
+      padding-left: 1.4rem;
+      border-left: 2px solid var(--cn-border);
+    }
+    .timeline-item {
+      position: relative;
+      padding: 0.6rem 0 0.6rem 1.2rem;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -1.6rem;
+      top: 1.1rem;
+      width: 10px; height: 10px;
+      background: var(--cn-vermilion);
+      border-radius: 50%;
+    }
+    .timeline-date {
+      font-family: var(--cn-font-serif);
+      color: var(--cn-vermilion);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
+    .timeline-text {
+      color: var(--cn-ink-soft);
+      font-size: 1.05rem;
+    }
+    /* ============== 统计 ============== */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .stat {
+      text-align: center;
+      border: 1px solid var(--cn-border);
+      padding: 1.2rem 0.8rem;
+      background: var(--cn-paper-soft);
+    }
+    .stat-num {
+      font-family: var(--cn-font-serif);
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--cn-vermilion);
+      line-height: 1.2;
+    }
+    .stat-label {
+      font-size: 0.9rem;
+      color: var(--cn-ink-soft);
+      letter-spacing: 0.08em;
+      margin-top: 0.4rem;
+    }
+    /* ============== 流程 ============== */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+      font-family: var(--cn-font-kai);
+    }
+    .flow-step {
+      background: var(--cn-paper-soft);
+      border: 1px solid var(--cn-border);
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      color: var(--cn-ink);
+    }
+    .flow-arrow {
+      color: var(--cn-vermilion);
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+    /* ============== 工具栏 ============== */
+    .nav-bar {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      background: rgba(246, 241, 231, 0.95);
+      border: 1px solid var(--cn-border);
+      padding: 0.5rem 1rem;
+      border-radius: 2px;
+      z-index: 100;
+      font-family: var(--cn-font-kai);
+      font-size: 0.9rem;
+      color: var(--cn-ink-soft);
+      box-shadow: 0 4px 12px rgba(28, 24, 21, 0.06);
+    }
+    .nav-bar button {
+      background: none;
+      border: 1px solid var(--cn-border);
+      color: var(--cn-ink);
+      padding: 0.3rem 0.7rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.9rem;
+      border-radius: 2px;
+    }
+    .nav-bar button:hover { background: var(--cn-vermilion); color: var(--cn-paper); border-color: var(--cn-vermilion); }
+    .nav-counter { color: var(--cn-vermilion); font-weight: 700; min-width: 3.5em; text-align: center; }
+    .progress {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: var(--cn-vermilion);
+      transition: width 0.3s ease;
+      z-index: 99;
+    }
+    /* ============== 封底 ============== */
+    .slide-end {
+      background: linear-gradient(180deg, var(--cn-paper) 0%, var(--cn-paper-soft) 100%);
+    }
+    .end-title {
+      font-family: var(--cn-font-kai);
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--cn-ink);
+      letter-spacing: 0.3em;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .end-sub {
+      font-family: var(--cn-font-kai);
+      font-size: 1.1rem;
+      color: var(--cn-ink-soft);
+      letter-spacing: 0.15em;
+      text-align: center;
+    }
+    /* ============== 响应式 ============== */
+    @media (max-width: 900px) {
+      .family-grid, .stats { grid-template-columns: repeat(2, 1fr); }
+      .toc-list { grid-template-columns: 1fr; }
+      .slide { padding: 4vh 6vw; }
+      .stamp { width: 48px; height: 48px; font-size: 1.2rem; }
+    }
+    @media (max-width: 600px) {
+      .family-grid, .stats { grid-template-columns: 1fr; }
+    }
+    /* ============== 打印 ============== */
+    @media print {
+      .slide { page-break-after: always; height: 100vh; opacity: 1 !important; transform: none !important; position: relative; }
+      .nav-bar, .progress { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress" id="progress"></div>
+  <div class="deck" id="deck">
+
+    <!-- ========== 1. 封面 ========== -->
+    <section class="slide slide-cover is-active" data-slide="1" data-total="11">
+      <div class="stamp">呈</div>
+      <div class="cover-mark">
+        <span class="cover-mark-text">视</span>
+      </div>
+      <h1 class="cover-title">视角研究中心</h1>
+      <div class="cover-subtitle">零号实验 · 项目汇报</div>
+      <div class="cover-meta">
+        <span>Zero-Perspective-Hub</span>
+        <span class="sep">·</span>
+        <span>2026 年 6 月</span>
+        <span class="sep">·</span>
+        <span>jeekeagle</span>
+      </div>
+    </section>
+
+    <!-- ========== 2. 目录 ========== -->
+    <section class="slide" data-slide="2" data-total="11">
+      <div class="chapter-num">目 录</div>
+      <h1 class="slide-title">本场汇报的<span class="accent">八个章节</span></h1>
+      <ol class="toc-list">
+        <li><span class="toc-num">一</span>缘起 —— 为什么要做这件事</li>
+        <li><span class="toc-num">二</span>定位 —— 这是个什么项目</li>
+        <li><span class="toc-num">三</span>方法 —— 六大家族分类法</li>
+        <li><span class="toc-num">四</span>现状 —— 五十二副镜片一览</li>
+        <li><span class="toc-num">五</span>案例 —— 贝叶斯思维视角</li>
+        <li><span class="toc-num">六</span>技术 —— 架构与自动化</li>
+        <li><span class="toc-num">七</span>规划 —— 下阶段三件事</li>
+        <li><span class="toc-num">八</span>期望 —— 需要什么支持</li>
+      </ol>
+      <p class="muted" style="margin-top: 2rem; text-align: right;">—— 全文约 10 分钟,问答 5 分钟 ——</p>
+    </section>
+
+    <!-- ========== 3. 一、缘起 ========== -->
+    <section class="slide" data-slide="3" data-total="11">
+      <div class="stamp">一</div>
+      <div class="chapter-num">第一章 · 缘 起</div>
+      <h1 class="slide-title">为什么做这件事?</h1>
+      <p class="lead">一切开始于一个观察 —— <span style="color: var(--cn-vermilion);">我们在用 AI 解决越来越多的问题,但我们没怎么认真讨论过"怎么看待问题"本身。</span></p>
+      <div class="quote">
+        "分类不是描述事物的秩序,而是规定事物的秩序。每一次切分,都既是简化,也是遮蔽。"
+      </div>
+      <h2>三个具体的触发点</h2>
+      <ul>
+        <li><strong style="color: var(--cn-vermilion);">第一,Agent 时代的"提示词爆炸"</strong> —— 我在 2026 年累积了 200 多个视角分析提示词(贝叶斯、系统动力学、稀缺性、拓扑学……),存在 Get 笔记里,没有结构、不能复用、不可检索</li>
+        <li><strong style="color: var(--cn-vermilion);">第二,跨领域思考的需求</strong> —— 工作中遇到的问题,越来越多地横跨产品、技术、商业、组织、心理,单学科视角都不够用</li>
+        <li><strong style="color: var(--cn-vermilion);">第三,自己想"训练"自己的元思考</strong> —— 能不能把"我用什么方式看这件事"这件事本身,做成可被显式调用的工具</li>
+      </ul>
+    </section>
+
+    <!-- ========== 4. 二、定位 ========== -->
+    <section class="slide" data-slide="4" data-total="11">
+      <div class="stamp">二</div>
+      <div class="chapter-num">第二章 · 定 位</div>
+      <h1 class="slide-title">这是个<span class="accent">什么</span>项目?</h1>
+      <p class="lead">一句话:<span style="color: var(--cn-vermilion);">一本关于"怎么看"的小书 + 一套让"怎么看"变得可复用的工具。</span></p>
+      <table>
+        <thead>
+          <tr><th style="width: 24%;">它<span style="opacity: 0.5;">不是</span></th><th>它<span style="color: var(--cn-vermilion);">是</span></th></tr>
+        </thead>
+        <tbody>
+          <tr><td>不是答案库</td><td>是观察框架库 —— 给你一副"眼镜",而不是给你一个"答案"</td></tr>
+          <tr><td>不是学术著作</td><td>是工程师写的应用集 —— 每个视角都对应一个可调用的 prompt 模板</td></tr>
+          <tr><td>不是商业产品</td><td>是公开的小书 + 全部开源(GitHub + GitHub Pages)</td></tr>
+          <tr><td>不是知识付费</td><td>是个人写作 + 工具复用的真实工作流(我在工作中就在用)</td></tr>
+          <tr><td>不是 ChatGPT 套壳</td><td>是一份持续积累的"思维方法手册",每章都可以独立调用</td></tr>
+        </tbody>
+      </table>
+      <p class="muted">—— 类比:它更接近一本《"思考的方式"百科》,而不是一本《"思考的结果"汇编》。</p>
+    </section>
+
+    <!-- ========== 5. 三、方法 ========== -->
+    <section class="slide" data-slide="5" data-total="11">
+      <div class="stamp">三</div>
+      <div class="chapter-num">第三章 · 方 法</div>
+      <h1 class="slide-title">五十二副镜片,<span class="accent">六大家族</span></h1>
+      <p class="lead">所有视角按"看世界的方法"分作六类 —— 每一族是一种特定的认识框架,戴上后看出去的光不一样。</p>
+      <div class="family-grid">
+        <div class="family-card">
+          <div class="name">一 · 系统与复杂</div>
+          <div class="tagline">把世界看成回路</div>
+          <div class="count">8 章 · 反馈、涌现、演化</div>
+        </div>
+        <div class="family-card">
+          <div class="name">二 · 思维方法</div>
+          <div class="tagline">把思想看成工具</div>
+          <div class="count">9 章 · 关于"怎么想"的手艺</div>
+        </div>
+        <div class="family-card">
+          <div class="name">三 · 经济与管理</div>
+          <div class="tagline">把人看成交易者</div>
+          <div class="count">9 章 · 资源、激励、决策</div>
+        </div>
+        <div class="family-card">
+          <div class="name">四 · 自然与形式科学</div>
+          <div class="tagline">把世界看成方程</div>
+          <div class="count">6 章 · 数学、统计、AI</div>
+        </div>
+        <div class="family-card">
+          <div class="name">五 · 人文与社会</div>
+          <div class="tagline">把人看成意义制造者</div>
+          <div class="count">5 章 · 哲学、心理学、宗教学</div>
+        </div>
+        <div class="family-card">
+          <div class="name">六 · 职业视角</div>
+          <div class="tagline">把工作看成处境</div>
+          <div class="count">15 章 · 15 种职业的"身在此山中"</div>
+        </div>
+      </div>
+      <p class="muted" style="margin-top: 1rem;">这六类的划分不是唯一的 —— 它只是当前最自然的一种切法,后续会随章节增加继续演化。</p>
+    </section>
+
+    <!-- ========== 6. 四、现状 ========== -->
+    <section class="slide" data-slide="6" data-total="11">
+      <div class="stamp">四</div>
+      <div class="chapter-num">第四章 · 现 状</div>
+      <h1 class="slide-title">从 0 到 52,花了<span class="accent">三个月</span></h1>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">52</div>
+          <div class="stat-label">实质章节</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">6</div>
+          <div class="stat-label">视角家族</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">90</div>
+          <div class="stat-label">天(从立项)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">开源 / 公开</div>
+        </div>
+      </div>
+      <h2>时间线(关键节点)</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2026.03 · 立 项</div>
+          <div class="timeline-text">决定把 Get 笔记里的零散提示词整理成结构化项目,先在 Zero-Skills-Hub 试点</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026.04 · 视觉定型</div>
+          <div class="timeline-text">确立"新中式"美学:宣纸 + 朱砂 + 墨色,放弃现代科技风,改走水墨路线</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026.05 · 方法确立</div>
+          <div class="timeline-text">写完"书式"侧栏结构、TOC、字体方案(LXGW WenKai + Inter),上线 v0.2.1</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026.06 · 章节爆发</div>
+          <div class="timeline-text">从 7 章扩到 52 章,写 watch-zero-skills.py 自动化上传流水线,清理占位章</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026.06.23 · 现状</div>
+          <div class="timeline-text">六大家族齐备,首页改版完成,准备进入下一阶段</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 7. 五、案例 ========== -->
+    <section class="slide" data-slide="7" data-total="11">
+      <div class="stamp">五</div>
+      <div class="chapter-num">第五章 · 案 例</div>
+      <h1 class="slide-title">看一段:<span class="accent">贝叶斯思维视角</span></h1>
+      <p class="lead">挑这一章做示范,因为它最能体现"视角"和"答案"的区别。</p>
+      <div class="case-frame">
+        <p><span class="label">问 题:</span>"我们新功能上线后,DAU 涨了 8%,是统计显著还是波动?"</p>
+      </div>
+      <div class="case-frame">
+        <p><span class="label">贝叶斯视角的分析骨架:</span></p>
+        <ul>
+          <li><strong>先验</strong>:历史上同类功能上线后,DAU 平均涨 3%,波动 ±5%</li>
+          <li><strong>证据</strong>:本周 DAU 涨 8%(4 天数据)</li>
+          <li><strong>似然</strong>:在"真无效果"假设下,出现 8% 的概率 ≈ 12%</li>
+          <li><strong>后验</strong>:真效果 ≈ 4-6% 之间(95% 可信区间)</li>
+          <li><strong>行动</strong>:不要急着发庆功帖,再观察一周;如果只涨 2-3% 才是"惊喜"</li>
+        </ul>
+      </div>
+      <div class="case-frame">
+        <p><span class="label">ASCII 结构图(章节末尾):</span></p>
+        <pre>先验 P ────+──→ 似然 P(E|H) ──→ 后验 P(H|E)
+           ↑                            │
+           └─────────── 新先验 ─────────┘</pre>
+      </div>
+      <p class="muted">—— 同一道题,戴着"显著性检验"的眼镜和戴着"贝叶斯"的眼镜,会看到不同的可信度和不同的行动建议。</p>
+    </section>
+
+    <!-- ========== 8. 六、技术 ========== -->
+    <section class="slide" data-slide="8" data-total="11">
+      <div class="stamp">六</div>
+      <div class="chapter-num">第六章 · 技 术</div>
+      <h1 class="slide-title">技术选型:<span class="accent">最简</span>,但不简陋</h1>
+      <p class="lead">一句话技术栈:<strong style="color: var(--cn-vermilion);">纯 HTML + 自托管字体 + Python 自动化 + GitHub Pages(主) + Vercel(副)</strong>。</p>
+      <h2>站点架构</h2>
+      <div class="flow">
+        <div class="flow-step">52 个 .html 章节</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">共用 style-cn.css</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">共用 cn-toc 侧栏</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">首页 index.html</div>
+      </div>
+      <h2>自动化流程(从 .md 到上线)</h2>
+      <div class="flow">
+        <div class="flow-step">Get 笔记导出 .md</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">放入 Zero-Skills/</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">watch-zero-skills.py 扫描</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">post-to-pers-hub 渲染</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">git commit + push</div>
+        <span class="flow-arrow">→</span>
+        <div class="flow-step">Pages 自动重建</div>
+      </div>
+      <h2>关键决策</h2>
+      <ul>
+        <li>不用 React / Next.js —— 内容为主,框架越简单越长寿</li>
+        <li>字体用 LXGW WenKai 自托管 + Inter 英文 —— 中英视觉协调</li>
+        <li>所有内容手敲 / 半自动 —— 没有"AI 批量生成",质量优先</li>
+      </ul>
+    </section>
+
+    <!-- ========== 9. 七、规划 ========== -->
+    <section class="slide" data-slide="9" data-total="11">
+      <div class="stamp">七</div>
+      <div class="chapter-num">第七章 · 规 划</div>
+      <h1 class="slide-title">下阶段,<span class="accent">三件事</span></h1>
+      <div class="stats" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="stat">
+          <div class="stat-num" style="font-size: 1.6rem; line-height: 1.3;">补方法篇</div>
+          <div class="stat-label" style="margin-top: 0.8rem;">锻造法 + 检验法<br>(第二编,2 章)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" style="font-size: 1.6rem; line-height: 1.3;">达 100 章</div>
+          <div class="stat-label" style="margin-top: 0.8rem;">继续扩到 100 章<br>(含元视角反思)</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num" style="font-size: 1.6rem; line-height: 1.3;">做衍生品</div>
+          <div class="stat-label" style="margin-top: 0.8rem;">PDF / EPUB / 印刷版<br>(适合线下传阅)</div>
+        </div>
+      </div>
+      <h2>三个里程碑</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">2026 Q3</div>
+          <div class="timeline-text">补完第二编"锻造法 / 检验法",形成完整闭环(视角 → 造视角 → 验视角)</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2026 Q4</div>
+          <div class="timeline-text">章节扩到 100+,加入"元视角"反思章(讨论"视角这整件事本身的局限")</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date">2027 H1</div>
+          <div class="timeline-text">导出 PDF / EPUB,试印 50 本纸质书,在小范围社群传阅</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 10. 八、期望 ========== -->
+    <section class="slide" data-slide="10" data-total="11">
+      <div class="stamp">八</div>
+      <div class="chapter-num">第八章 · 期 望</div>
+      <h1 class="slide-title">希望获得什么<span class="accent">支持</span>?</h1>
+      <p class="lead">这个项目我一个人做得动,但如果有支持,可以做得<span style="color: var(--cn-vermilion);">更专业、更持续、更大</span>。</p>
+      <table>
+        <thead>
+          <tr><th style="width: 20%;">类 别</th><th>具体诉求</th><th style="width: 22%;">我提供的</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>时间</td>
+            <td>每月 1-2 天带薪,投入章节撰写和工具维护</td>
+            <td>对外可作为部门"AI 时代方法论沉淀"案例</td>
+          </tr>
+          <tr>
+            <td>协作</td>
+            <td>若有同事愿意贡献视角(销售/产品/法务/HR …),共建共写</td>
+            <td>提供 prompt 模板、自动化工具、托管空间</td>
+          </tr>
+          <tr>
+            <td>传播</td>
+            <td>允许在内部分享会上做一次"五副镜片看 AI"的演讲</td>
+            <td>完整材料、互动环节、可订制的话题清单</td>
+          </tr>
+          <tr>
+            <td>预算</td>
+            <td>线下印刷 50 本(约 ¥1500)+ 域名升级(可选)</td>
+            <td>所有产出开源 / 共享 / 内部可任意复制</td>
+          </tr>
+          <tr>
+            <td>探索</td>
+            <td>允许我把这套方法论试用于 1-2 个真实业务问题(练手)</td>
+            <td>把案例写成章节,反哺项目</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="muted" style="margin-top: 1.5rem; text-align: right;">—— 最小支持(0 资源)也能继续,只是速度会慢一半 ——</p>
+    </section>
+
+    <!-- ========== 11. 封底 ========== -->
+    <section class="slide slide-end" data-slide="11" data-total="11">
+      <div class="end-title">谢 谢 聆 听</div>
+      <div class="end-sub">
+        <p>问答时间 · Q &amp; A</p>
+        <p style="margin-top: 2rem; color: var(--cn-ink-faint); font-size: 0.95rem;">
+          jeekeagle@gmail.com · github.com/jeekeagle/zero-perspective-hub
+        </p>
+        <p style="margin-top: 0.8rem; color: var(--cn-ink-faint); font-size: 0.9rem;">
+          "戴上不同的眼镜,世界会有不同的样子。"
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ========== 工具栏 ========== -->
+  <div class="nav-bar">
+    <button id="btn-prev" aria-label="上一页">←</button>
+    <span class="nav-counter"><span id="cur">1</span> / <span id="total">11</span></span>
+    <button id="btn-next" aria-label="下一页">→</button>
+    <span style="opacity: 0.4; margin: 0 0.4rem;">|</span>
+    <span style="font-size: 0.8rem;">← → 翻页 · F 全屏</span>
+  </div>
+
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.slide');
+      const total = slides.length;
+      const progress = document.getElementById('progress');
+      const curEl = document.getElementById('cur');
+      const totalEl = document.getElementById('total');
+      totalEl.textContent = total;
+
+      let current = 0;
+
+      function go(idx) {
+        if (idx < 0 || idx >= total) return;
+        slides[current].classList.remove('is-active');
+        slides[current].classList.toggle('is-prev', idx < current);
+        current = idx;
+        slides[current].classList.add('is-active');
+        slides[current].classList.remove('is-prev');
+        curEl.textContent = current + 1;
+        progress.style.width = ((current + 1) / total * 100) + '%';
+        history.replaceState(null, '', '#' + (current + 1));
+      }
+
+      function next() { go(Math.min(current + 1, total - 1)); }
+      function prev() { go(Math.max(current - 1, 0)); }
+
+      document.getElementById('btn-next').addEventListener('click', next);
+      document.getElementById('btn-prev').addEventListener('click', prev);
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') { e.preventDefault(); next(); }
+        else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { e.preventDefault(); prev(); }
+        else if (e.key === 'Home') { go(0); }
+        else if (e.key === 'End') { go(total - 1); }
+        else if (e.key === 'f' || e.key === 'F') {
+          if (document.fullscreenElement) document.exitFullscreen();
+          else document.documentElement.requestFullscreen();
+        }
+      });
+
+      // hash 初始化
+      const m = location.hash.match(/^#(\d+)$/);
+      if (m) go(Math.max(0, Math.min(parseInt(m[1], 10) - 1, total - 1)));
+      else progress.style.width = (1 / total * 100) + '%';
+    })();
+  </script>
+</body>
+</html>
